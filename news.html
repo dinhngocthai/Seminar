@@ -86,17 +86,7 @@
             font-size: 20px;
         }
 
-        /* #footer {
 
-             margin-top: 10px;
-             padding-top: 20px;
-             font-weight: bold;
-             font-family: Constantia;
-             font-size: 25px;
-             background: lightblue;
-             color: black;
-             height: 90px;
-         }*/
 
         #footer .left {
             text-align: center;
@@ -105,25 +95,7 @@
 
         }
 
-        .btnpos {
-            margin-left: 650px;
-            margin-top: 20px;
-        }
 
-        .btn:not(:disabled):not(.disabled) {
-            cursor: pointer;
-        }
-
-        .btnpos .btn {
-            font-size: 20px;
-            margin-left: auto;
-            text-align: center;
-            background: silver;
-            border-radius: 0px;
-            border: 1px solid silver;
-            padding-top: 2px;
-            color: black;
-        }
     </style>
 </head>
 <body>
@@ -169,7 +141,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Trang chủ</a></li>
+                    <li class=""><a href="index.html">Trang chủ</a></li>
                     <li class="danh_muc"><a href="shop.html">Danh mục sản phẩm</a>
 
 
@@ -227,8 +199,8 @@
         <div id="content_a">
 
             <img src="img/galaxy-s21_800x450.jpg" height="600" width="1110"/>
-            <p class="text_text">Xuất hiện hình ảnh mặt trước Galaxy S21+: Thiết kế màn hình phẳng, viền benzel siêu
-                mỏng và phần camera selfie thon gọn hơn</p>
+          <p> <a href="#" class="text_text">Xuất hiện hình ảnh mặt trước Galaxy S21+: Thiết kế màn hình phẳng, viền benzel siêu
+              mỏng và phần camera selfie thon gọn hơn</a> </p>
         </div>
         <div id="content_b">
             <div class="content_bbb">
@@ -261,16 +233,34 @@
         </div>
     </div>
 </div>
-<div class="btnpos">
-    <input class="btn btn-primary" type="button" value="<<">
-    <input class="btn btn-primary" type="button" value="<">
-    <input class="btn btn-primary" type="button" value="1">
-    <input class="btn btn-primary" type="button" value="2">
-    <input class="btn btn-primary" type="button" value="3">
-    <input class="btn btn-primary" type="button" value="...">
-    <input class="btn btn-primary" type="button" value=">">
-    <input class="btn btn-primary" type="button" value=">>">
+<div class="row">
+    <div class="col-md-12">
+        <div class="product-pagination text-center">
+            <nav>
+                <ul class="pagination">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 </div>
+</div>
+</div>
+
 
 <div class="footer-top-area">
     <div class="zigzag-bottom"></div>
