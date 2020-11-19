@@ -1190,7 +1190,7 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     position: relative;
 }
 
-.sub-menu > li:hover{
+.s-menu > li:hover{
     color: #5a88ca;
     cursor: pointer;
     display: block;
@@ -1200,7 +1200,7 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     position: absolute;
     margin-top: -15px;
     height: 45px;
-    margin-left: 47px;
+    margin-left: 49px;
     padding-top: 7px;
     padding-left: 0px;
     display: none;
@@ -1217,7 +1217,7 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     margin-top: -15px;
     height: 45px;
     margin-left: 47px;
-    padding-top: 7px;
+    padding-top: 8px;
     padding-left: 49px;
     display: none;
     color: black;
@@ -1230,8 +1230,16 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     padding-right: 35px;
     font-size: 14px;
     list-style-type: none;
-
 }
+.sub-menu > li > .h_sx >li >a{
+    background: white;
+}
+
+
+
+
+
+
 
 .sub-menu li > .h_sx > li:hover{
     color: #5a88ca;
@@ -1451,3 +1459,17 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 .form-v8-content .form-detail .form-row-last input {
     padding: 11px;
 }
+.list-group-item{
+    width:  100px;
+    height: 40px;
+    background-color: white;
+    position: inherit;
+    padding: 10px;
+    margin-top: -16px;
+    text-align: center;
+    background:black;
+    align-items: center;
+    display: inline;
+
+}
+
