@@ -193,7 +193,9 @@ body { font-family:Arial, Helvetica, sans-serif; }
 
 }
 
-.mainmenu-area ul.navbar-nav li:hover a, .mainmenu-area ul.navbar-nav li.active a {background: #5a88ca; color:#FFF;}
+.mainmenu-area ul.navbar-nav > li:hover > a, .mainmenu-area ul .navbar-nav > li.active >  a {
+    background: #5a88ca; color:#FFF;
+}
 .mainmenu-area .nav > li > a:focus {color: #FFF;}
 
 .slider-area { width:80%; position:relative; margin:0 auto; padding:5px;}
@@ -663,7 +665,7 @@ body { font-family:Arial, Helvetica, sans-serif; }
 .newsletter-form {
     margin-top: 25px;
 }
-a {color: #5a88ca}
+/*a {color: #5a88ca}*/
 a:hover, a:focus {color: #17a78b}
 .footer-bottom-area {
     background: none repeat scroll 0 0 #000;
@@ -1174,7 +1176,7 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 
 .navbar-collapse .navbar-nav:hover li {
 }
-.navbar-collapse .navbar-nav >li:hover .sub-menu{
+.navbar-collapse .navbar-nav >li:hover  .sub-menu{
     display:block;
     align-items: center;
     text-align: left;
@@ -1209,17 +1211,17 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     position: absolute;
     margin-top: -15px;
     height: 45px;
-    margin-left: 49px ;
+    margin-left: 30px ;
     padding-top: 7px;
     padding-left: 0px;
     display: none;
     color: black;
     background: #f5f5f7;
 }
-.sub-menu > li > .h_sx >li a{
+/*.sub-menu > li > .h_sx >li  a{
  background: white;
 
-}
+}*/
 .sub-menu > li:hover > ul{
  display: inline-flex;
 }
@@ -1237,26 +1239,18 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 }
 
 
-.sub-menu > li > .h_sx >li{
+.sub-menu > li > .h_sx > li {
  padding-top: 7px;
  padding-bottom: 7px;
  padding-left: 7px;
- padding-right: 35px;
+ padding-right: 7px;
  font-size: 14px;
  list-style-type: none;
+
 }
-.sub-menu > li > .h_sx >li >a{
- background: white;
-}
-
-
-
-
-
-
 
 .sub-menu li > .h_sx > li:hover{
- color: #cb007c;
+ color: #5a88ca;
 
 }
 .sub-menu > li > .muc_gia >li{
@@ -1268,15 +1262,10 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 }
 
 .sub-menu li > .muc_gia > li:hover{
- color: #ee0d3b;
+ color: #5a88ca;
 }
-#sub-menu-option{
+.mainmenu-area > ul > .navbar-nav > li:hover > a{
 
-}
-.danh_muc >ul>li>ul>a{
-
-}
-.sub-option{
 }
 
 /*----------------------
@@ -1485,6 +1474,6 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     display: inline;
 }
 .h_sx >li a{
-    size: auto;
+    /*size: auto;*/
 }
 
