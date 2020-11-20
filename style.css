@@ -134,6 +134,7 @@ body { font-family:Arial, Helvetica, sans-serif; }
 .logo h1 a:hover {text-decoration: none;opacity: .7}
 .logo h1 a span {
     color: #5a88ca;
+
 }
 .shopping-item {
     border: 1px solid #ddd;
@@ -188,6 +189,8 @@ body { font-family:Arial, Helvetica, sans-serif; }
     color: #6e6a6a;
     font-size: 14px;
     padding: 20px;
+
+
 }
 
 .mainmenu-area ul.navbar-nav li:hover a, .mainmenu-area ul.navbar-nav li.active a {background: #5a88ca; color:#FFF;}
@@ -1169,8 +1172,12 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     float: left;
 }
 
-.navbar-collapse .navbar-nav >li:hover .sub-menu {
+.navbar-collapse .navbar-nav:hover li {
+}
+.navbar-collapse .navbar-nav >li:hover .sub-menu{
     display:block;
+    align-items: center;
+    text-align: left;
 }
 .sub-menu{
     display: none;
@@ -1189,8 +1196,10 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     list-style-type: none;
     position: relative;
 }
+.sub-menu > li > ul{
+}
 
-.s-menu > li:hover{
+.sub-menu > li:hover {
     color: #5a88ca;
     cursor: pointer;
     display: block;
@@ -1200,39 +1209,44 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     position: absolute;
     margin-top: -15px;
     height: 45px;
-    margin-left: 49px;
+    margin-left: 49px ;
     padding-top: 7px;
     padding-left: 0px;
     display: none;
     color: black;
     background: #f5f5f7;
 }
+.sub-menu > li > .h_sx >li a{
+ background: white;
 
+}
 .sub-menu > li:hover > ul{
-    display: inline-flex;
+ display: inline-flex;
 }
 
 .sub-menu >li > .muc_gia{
-    position: absolute;
-    margin-top: -15px;
-    height: 45px;
-    margin-left: 47px;
-    padding-top: 8px;
-    padding-left: 49px;
-    display: none;
-    color: black;
-    background: #f5f5f7;
+ position: absolute;
+ margin-top: -15px;
+ height: 45px;
+ margin-left: 47px;
+ padding-top: 8px;
+ padding-left: 49px;
+ display: none;
+ color: black;
+ background: #f5f5f7;
 }
+
+
 .sub-menu > li > .h_sx >li{
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-left: 7px;
-    padding-right: 35px;
-    font-size: 14px;
-    list-style-type: none;
+ padding-top: 7px;
+ padding-bottom: 7px;
+ padding-left: 7px;
+ padding-right: 35px;
+ font-size: 14px;
+ list-style-type: none;
 }
 .sub-menu > li > .h_sx >li >a{
-    background: white;
+ background: white;
 }
 
 
@@ -1242,18 +1256,19 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 
 
 .sub-menu li > .h_sx > li:hover{
-    color: #5a88ca;
-}
-.sub-menu > li > .muc_gia >li{
-    padding-bottom: 7px;
-    padding-left: 7px;
-    padding-right: 35px;
-    font-size: 14px;
-    list-style-type: none;
+ color: #cb007c;
 
 }
+.sub-menu > li > .muc_gia >li{
+ padding-bottom: 0px;
+ padding-left: 10px;
+ padding-right: 35px;
+ font-size: 14px;
+ list-style-type: none;
+}
+
 .sub-menu li > .muc_gia > li:hover{
-    color: #5a88ca;
+ color: #ee0d3b;
 }
 #sub-menu-option{
 
@@ -1262,8 +1277,6 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 
 }
 .sub-option{
-    background-color: #000000;
-    background: white;
 }
 
 /*----------------------
@@ -1470,6 +1483,8 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     background:black;
     align-items: center;
     display: inline;
-
+}
+.h_sx >li a{
+    size: auto;
 }
 
