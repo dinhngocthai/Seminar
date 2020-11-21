@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Checkout Page - Ustora Demo</title>
+        <title>Đăng kí</title>
 
         <!-- Google Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
@@ -50,31 +50,23 @@
 
             }
             .input_box{
-                padding-top: 26px;
+                padding-top: 11px;
                 position: relative;
+                display: flex;
 
-            }
-            .input_box span{
-                position: absolute;
-                top: 45px;
-                right: 20px;
-                cursor: pointer;
             }
             .input_box input{
                 width: 100%;
                 box-shadow: 0px 0px 23px -3px rgba(0,0,0,0.75);
-                border-radius: 10px;
-                height: 51px;
+                border-radius: 5px;
+                height: 43px;
                 border: none;
                 cursor: pointer;
                 box-sizing: border-box;
             }
-            .label_1{
-                text-align: right;
-                padding-top: 17px;
-            }
+
             .button{
-                width: 132px;
+                width: 150px;
                 margin: auto;
                 padding-top: 22px;
             }
@@ -84,7 +76,7 @@
                 padding-top: 5px;
                 padding-bottom: 5px;
                 border-radius: 20px;
-                width: 132px;
+                width: 147px;
                 height: 45px;
                 cursor: pointer;
             }
@@ -95,16 +87,12 @@
                 box-shadow: 0px 0px 23px -3px rgb(50, 44, 50);
                 align-items: center;
             }
-
-            .sign_Up{
-                color: #6d6565;
-                margin-top: 50px;
-                text-align: center;
-                cursor: pointer;
-
+            .err{
+                color: red;
             }
 
         </style>
+
     </head>
 <body>
 <div class="site-branding-area">
@@ -169,12 +157,13 @@
                             <li>Mức giá
 
                                 <ul class="muc_gia">
-                                    <li><a href="5-trieu.html">< 5 triệu</a></li>
-                                    <li><a href="5-10trieu.html">5-10 triệu</a></li>
-                                    <li><a href="10-15trieu.html">10-15 triệu</a></li>
-                                    <li><a href="15trieu.html">15 triệu</a></li>
+                                    <li>< 5 triệu</li>
+                                    <li>5-10 triệu</li>
+                                    <li>10-15 triệu</li>
+                                    <li>>15 triệu</li>
 
                                 </ul>
+
                             </li>
 
                         </ul>
@@ -196,7 +185,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="product-bit-title text-center">
-                    <h2>Đăng nhập</h2>
+                    <h2>Đăng kí</h2>
                 </div>
             </div>
         </div>
@@ -205,29 +194,81 @@
 
 <div class="container_form">
     <div class="sign_in_form">
-        <form id="Sign_In" method="post" action="">
+        <form id="Sign_In" method="post" action="" onsubmit="getInfo();return false">
             <div class="input_box">
-                <input id="username" name="username" type="text" placeholder="Tên người dùng">
+                <input id="username" name="username" type="text" placeholder="Tên người dùng" value="">
 
             </div>
+            <div class="err">
+                <span id="errorname"></span>
+
+            </div>
+<-------------------------------------------------------->
             <div class="input_box">
-                <input id="password" name="password" type="password" placeholder="Mật khẩu">
-                <span class="fa fa-eye" onclick="showHidden()"></span>
+                <input id="last_first_name" name="lastfirstname" type="text" placeholder="Họ và tên" value="">
+                <!--<span id="errorname_1" class="err"></span> -->
+            </div>
+
+            <div class="err">
+                <span id="errorname_1"></span>
+            </div>
+            <----------------------------------------------------->
+
+            <div class="input_box">
+                <input id="email"  name="email" type="text" placeholder="Email" value="">
+               <!-- <span id="erroremail" class="err"></span> -->
 
             </div>
-            <div class="label_1">
-                <span><a href="#">Quên mật khẩu?</a></span>
+            <div class="err">
+                <span id="erroremail"></span>
 
             </div>
+            <-------------------------------------------------------->
+            <div class="input_box">
+                <input id="phone" name="phone" type="text" placeholder="Số điện thoại" value="">
+               <!-- <span id="errorphone" class="err"></span>-->
+
+            </div>
+            <div class="err">
+                <span id="errorphone"></span>
+
+            </div>
+            <---------------------------------------------------->
+            <div class="input_box">
+                <input id="address" name="address" type="text" placeholder="Địa chỉ" value="">
+              <!--  <span id="erroradd" class="err"></span> -->
+
+            </div>
+            <div class="err">
+                <span id="erroradd"></span>
+
+            </div>
+            <----------------------------------------------------------->
+            <div class="input_box">
+                <input id="password" name="password" type="password" placeholder="Mật khẩu" value="">
+              <!--  <span id="errorpass" class="err"></span>-->
+
+            </div>
+            <div class="err">
+                <span id="errorpass"></span>
+
+            </div>
+            <-------------------------------------->
+            <div class="input_box">
+                <input id="repassword" name="repassword" type="password" placeholder="Nhập lại mật khẩu" value="">
+               <!-- <span id="errorrepass" class="err"></span>-->
+
+            </div>
+            <div class="err">
+                <span id="errorrepass"></span>
+
+            </div>
+            <--------------------------------------------->
+
             <div class="button">
-                <input class="button1" type="submit" value="Đăng nhập"></input>
+                <input class="button1" type="submit" value="Tạo tài khoản"> <!--onclick="getInfo(); return false"-->></input>
             </div>
         </form>
-
-        <div class="sign_Up">
-            <span>Bạn có tài khoản chưa? <a href="signin.html">Đăng kí</a></span>
-
-        </div>
     </div>
 </div>
 <div class="footer-top-area">
@@ -331,20 +372,61 @@
 <!-- Slider -->
 <script type="text/javascript" src="js/bxslider.min.js"></script>
 <script type="text/javascript" src="js/script.slider.js"></script>
-
 <script>
-    isBool = true;
-    function showHidden(){
-        if(isBool){
-            document.getElementById("password").setAttribute("type","text");
-            isBool= false;
-        } else {
-            document.getElementById("password").setAttribute("type","password");
-            isBool= true;
-        }
-
+ function getInfo(){
+     var username=document.getElementById("username").value;
+     var last_first_name= document.getElementById("last_first_name").value;
+     var email= document.getElementById("email").value;
+     var phone=document.getElementById("phone").value;
+     var address=document.getElementById("address").value;
+     var password=document.getElementById("password").value;
+     var repassword=document.getElementById("repassword").value;
+     //kiem tra du lieu
+     if(username=="") {
+         document.getElementById("errorname").innerHTML="Vui lòng nhập tên người dùng";
+     } else {
+         document.getElementById("errorname").innerHTML="";
     }
+    //ktra name
+     if(last_first_name==""){
+         document.getElementById("errorname_1").innerHTML="Vui lòng nhập họ và tên";
+     }  else {
+         document.getElementById("errorname_1").innerHTML="";
+     }
+     //ktra email
+     if(email==""){
+         document.getElementById("erroremail").innerHTML="Vui lòng nhập email";
+     }  else {
+         document.getElementById("erroremail").innerHTML="";
+     }
+     //ktra phone
+     if(phone==""){
+         document.getElementById("errorphone").innerHTML="Vui lòng nhập số điện thoại";
+     }  else {
+         document.getElementById("errorphone").innerHTML="";
+     }
+     //ktra dia chi
+     if(address==""){
+         document.getElementById("erroradd").innerHTML="Vui lòng nhập địa chỉ";
+     }  else {
+         document.getElementById("erroradd").innerHTML="";
+     }
+     //ktra mat khau
+     if(password==""){
+         document.getElementById("errorpass").innerHTML="Vui lòng nhập mật khẩu";
+     }  else {
+         document.getElementById("errorpass").innerHTML="";
+     }
+     if(repassword==""){
+         document.getElementById("errorrepass").innerHTML="Vui lòng nhập lại mật khẩu";
+     }  else {
+         document.getElementById("errorrepass").innerHTML="";
+     }
+
+
+
+ }
 </script>
 
 </body>
-</html>h
+</html>
