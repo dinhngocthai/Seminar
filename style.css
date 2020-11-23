@@ -1614,6 +1614,7 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 .page-content--bge5 {
     background: #e5e5e5;
     height: 100vh;
+    align-items: center;
 }
 
 .login-wrap {
