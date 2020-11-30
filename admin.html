@@ -204,6 +204,21 @@
             border: 1px solid black;
             border-collapse: collapse;
         }
+        /*---table data*/
+        .content{
+            font-size: 28px;
+            font-weight: bold;
+
+        }
+        .input_box{
+            margin-bottom: 7px;
+            font-size: 16px;
+        }
+        .input__ input{
+            width: 90%;
+            border-radius: 7px;
+            border: 1px solid #d8d8d8;
+        }
 
 
 
@@ -228,7 +243,7 @@
 
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="adminProduct.html">
                         <i class="fa fa-mobile-phone"></i>Quản lí sản phẩm</a>
                 </li>
                 <li>
@@ -291,11 +306,72 @@
     </div>
     <!------------------Table Data--------------------------------->
     <div class="contain-main">
-        <div class="button-add">
-            <a href="#"><i class="fa fa-plus"></i>Thêm người dùng</a>
+        <div class="add-user">
+            <div class="content">
+                <span>Nhập thông tin khách hàng</span>
+            </div>
+            <div class="add-form">
+                <form id="form-add-user" method="post" action="">
+                    <div class="input_box">
+                        <div class="text">
+                            <span>Tên khách hàng</span>
+                            <input type="number" name="index" id="index" value="" hidden="true">
+
+                        </div>
+                        <div class="input__">
+                            <input id="username" type="text" name="username">
+                        </div>
+
+                    </div>
+                    <div class="input_box">
+                        <div class="text">
+                            <span>Mã khách hàng</span>
+                        </div>
+                        <div class="input__">
+                            <input id="id-user" type="text" name="id-user">
+                        </div>
+
+                    </div>
+                    <div class="input_box">
+                        <div class="text">
+                            <span>Email</span>
+                        </div>
+                        <div class="input__">
+                            <input id="email" type="text" name="email">
+                        </div>
+
+                    </div>
+                    <div class="input_box">
+                        <div class="text">
+                            <span>Số điện thoại</span>
+                        </div>
+                        <div class="input__">
+                            <input id="phone" type="text" name="phone">
+                        </div>
+
+                    </div>
+                    <div class="input_box">
+                        <div class="text">
+                            <span>Địa chỉ</span>
+                        </div>
+                        <div class="input__">
+                            <input id="address" type="text" name="address">
+                        </div>
+
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Cập nhật" onclick="addUser();return false">
+                        <input type="reset" value="Tải lại">
+
+                    </div>
+
+
+                </form>
+
+            </div>
 
         </div>
-        <table class="table table-data2">
+        <table class="table table-data2" id="data-list">
             <thead>
             <tr>
                 <th>STT</th>
@@ -305,103 +381,81 @@
                 <th>Số điện thoại</th>
                 <th>Địa chỉ</th>
                 <th></th>
+                <th></th>
             </tr>
             </thead>
-            <tbody>
-            <tr class="tr-shadow">
-                <td>1</td>
-                <td>ID001</td>
-                <td>Võ Thị Thanh Quỳnh</td>
-                <td>
-                    <span class="block-email">quynhvo2501@gmail.com</span>
-                </td>
-                <td>0593365451</td>
-               <td>
-                   <span class="block-add">Khu phố 6, phường Linh Trung, quận Thủ Đức, TP HCM </span>
-               </td>
-                <td>
-                    <div class="table-data-feature">
-                        <button class="item">
-                            <i class="fa fa-edit"></i>
-                        </button>
-                        <button class="item">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="spacer"></tr>
-            <tr class="tr-shadow">
-                <td>2</td>
-                <td>ID002</td>
-                <td>Lê Thị Ngọc Hiệp</td>
-                <td>
-                    <span class="block-email">ngochiep@gmail.com</span>
-                </td>
-                <td>0593365451</td>
-                <td>
-                    <span class="block-add">Đường 17, phường Linh Trung, Thủ Đức, TP HCM </span>
-                </td>
-                <td>
-                    <div class="table-data-feature">
-                        <button class="item">
-                            <i class="fa fa-edit"></i>
-                        </button>
-                        <button class="item">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="spacer"></tr>
-            <tr class="tr-shadow">
-                <td>3</td>
-                <td>ID003</td>
-                <td>Đinh Ngọc Thái</td>
-                <td>
-                    <span class="block-email">ngocthai@gmail.com</span>
-                </td>
-                <td>0593365451</td>
-                <td>
-                    <span class="block-add">20 Lý Thái TỔ,TP Biên Hòa, tỉnh Đồng Nai </span>
-                </td>
-                <td>
-                    <div class="table-data-feature">
-                        <button class="item">
-                            <i class="fa fa-edit"></i>
-                        </button>
-                        <button class="item">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="spacer"></tr>
-            <tr class="tr-shadow">
-                <td>4</td>
-                <td>ID004</td>
-                <td>Nguyễn Văn A</td>
-                <td>
-                    <span class="block-email">nguyenvana@gmail.com</span>
-                </td>
-                <td>0593365451</td>
-                <td>
-                    <span class="block-add">12 Võ Văn Ngân, Thủ Đức, TP HCM </span>
-                </td>
-                <td>
-                    <div class="table-data-feature">
-                        <button class="item">
-                            <i class="fa fa-edit"></i>
-                        </button>
-                        <button class="item">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
+            <tbody id="result">
+
             </tbody>
         </table>
     </div>
 </div>
+<script type="text/javascript">
+    var count=0;
+    var dataList=[];
+    function addUser() {
+        var index = document.getElementById('index').value;
+        var username = document.getElementById("username").value;
+        var id = document.getElementById("id-user").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var address = document.getElementById("address").value;
+
+        var user = {
+            "username": username,
+            "id": id,
+            "email": email,
+            "phone": phone,
+            "address": address
+
+        }
+        dataList.push(user);
+        var dataListTag = document.getElementById("result");
+        dataListTag.innerHTML +=
+            `<tr>
+						<td>${++count}</td>
+						<td>${username}</td>
+						<td>${id}</td>
+						<td>${email}</td>
+						<td>${phone}</td>
+						<td>${address}</td>
+						<td><button class="fa fa-edit" onclick="editUser(${count - 1})">Sửa</button></td>
+						<td><button class="fa fa-trash" onclick="deleteUser(${count - 1})">Xóa</button></td>
+					</tr>`
+    }
+    function deleteUser(index) {
+        console.log(index)
+        dataList.splice(index, 1)
+        showUser();
+    }
+
+    function showUser() {
+        document.getElementById('result').innerHTML = ''
+
+        for (var i = 0; i < dataList.length; i++) {
+            document.getElementById('result').innerHTML += `<tr>
+						<td>${i+1}</td>
+						<td>${dataList[i].username}</td>
+						<td>${dataList[i].id}</td>
+						<td>${dataList[i].email}</td>
+						<td>${dataList[i].phone}</td>
+						<td>${dataList[i].address}</td>
+						<td><button class="fa fa-edit" onclick="editUser(${i})">Sửa</button></td>
+						<td><button class="fa fa-trash" onclick="deleteUser(${i})">Xóa</button></td>
+					</tr>`
+        }
+    }
+    function editUser(index) {
+        var user = dataList[index]
+        console.log(user)
+        document.getElementById('index').value = index
+        document.getElementById('username').value = user.username
+        document.getElementById('id-user').value = user.id
+        document.getElementById('email').value = user.email
+        document.getElementById('phone').value = user.phone
+        document.getElementById('address').value = user.address
+
+    }
+</script>
 </body>
 </html>
