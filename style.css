@@ -1755,3 +1755,17 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 .au-input--full {
     width: 100%;
 }
+/*=============================================================*/
+/*========================Admin-Product========================*/
+/*=============================================================*/
+
+
+
+.contain-main >td,.Product-img{
+    width: 70px;
+    height: auto;
+    padding-top: 10px;
+    padding-left: 10px;
+    align-items: center;
+    padding: 5px;
+}
