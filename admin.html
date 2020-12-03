@@ -432,8 +432,7 @@
                 <th>Email</th>
                 <th>Số điện thoại</th>
                 <th>Địa chỉ</th>
-                <th></th>
-                <th></th>
+                <th>Tác vụ</th>
             </tr>
             </thead>
             <tbody id="result">
@@ -537,8 +536,8 @@
 						<td>${email}</td>
 						<td>${phone}</td>
 						<td>${address}</td>
-						<td><button class="fa fa-edit" onclick="editUser(${count - 1})">Sửa</button></td>
-						<td><button class="fa fa-trash" onclick="deleteUser(${count - 1})">Xóa</button></td>
+						<td><button class="fa fa-edit" onclick="editUser(${count - 1})">Sửa</button>
+						<button class="fa fa-trash" onclick="deleteUser(${count - 1})">Xóa</button></td>
 					</tr>`
         }
     }
