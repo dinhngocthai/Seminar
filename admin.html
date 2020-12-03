@@ -270,7 +270,7 @@
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar__list">
                     <li>
-                        <a class="user" href="admin.html" style="color: red">
+                        <a class="user" href="admin.html"><!-- style="color: red"-->
                             <i class="fa fa-user"></i>Quản lí người dùng</a>
 
                     </li>
@@ -460,80 +460,76 @@
         var checkemail = false;
 
         /*<=============================Kiem tra du lieu=============================>*/
-        /*
 
-                //ktra name
-                if (username == "") {
-                    document.getElementById("errorname").innerHTML = "Vui lòng nhập tên khách hàng";
-                } else {
-                    document.getElementById("errorname").innerHTML = "";
-                    checkname = true;
-                }
+        //ktra name
+        if (username == "") {
+            document.getElementById("errorname").innerHTML = "Vui lòng nhập tên khách hàng";
+        } else {
+            document.getElementById("errorname").innerHTML = "";
+            checkname = true;
+        }
 
-                // kiem tra ma KH
-                if (id == "") {
-                    document.getElementById("errorid").innerHTML = " Vui lòng nhập mã khách hàng"
-                } else {
-                    document.getElementById("errorid").innerHTML = "";
-                    checkid = true;
-
-                }
-
-                //ktra email
-                if (email == "") {
-                    document.getElementById("erroremail").innerHTML = "Vui lòng nhập email";
-
-                } else if (!email.match(letter)) {
-                    document.getElementById("erroremail").innerHTML = "Vui lòng nhập đúng định dạng email";
-
-
-                } else {
-                    document.getElementById("erroremail").innerHTML = "";
-                    checkemail = true;
-
-                }
-
-                //ktra phone
-                if (phone == "") {
-                    document.getElementById("errorphone").innerHTML = "Vui lòng nhập số điện thoại";
-                } else if (isNaN(phone)) {
-                    document.getElementById("errorphone").innerHTML = "Chỉ cho phép nhập số";
-                } else {
-                    document.getElementById("errorphone").innerHTML = "";
-                    checkphone = true;
-
-                }
-
-
-                //ktra dia chi
-                if (address == "") {
-                    document.getElementById("erroraddress").innerHTML = "Vui lòng nhập địa chỉ";
-                } else {
-                    document.getElementById("erroraddress").innerHTML = "";
-                    checkaddress = true;
-
-                }
-
-        */
-
-        /*==================== them du lieu vao bang ====================*/
-        /*
-                if (checkname == true && checkid == true && checkaddress == true && checkphone == true &&checkemail == true ) {
-        */
-        var user = {
-            "username": username,
-            "id": id,
-            "email": email,
-            "phone": phone,
-            "address": address,
+        // kiem tra ma KH
+        if (id == "") {
+            document.getElementById("errorid").innerHTML = " Vui lòng nhập mã khách hàng"
+        } else {
+            document.getElementById("errorid").innerHTML = "";
+            checkid = true;
 
         }
-        dataList.push(user);
+
+        //ktra email
+        if (email == "") {
+            document.getElementById("erroremail").innerHTML = "Vui lòng nhập email";
+
+        } else if (!email.match(letter)) {
+            document.getElementById("erroremail").innerHTML = "Vui lòng nhập đúng định dạng email";
 
 
-        var dataListTag = document.getElementById("result");
-        dataListTag.innerHTML +=
-            `<tr>
+        } else {
+            document.getElementById("erroremail").innerHTML = "";
+            checkemail = true;
+
+        }
+
+        //ktra phone
+        if (phone == "") {
+            document.getElementById("errorphone").innerHTML = "Vui lòng nhập số điện thoại";
+        } else if (isNaN(phone)) {
+            document.getElementById("errorphone").innerHTML = "Chỉ cho phép nhập số";
+        } else {
+            document.getElementById("errorphone").innerHTML = "";
+            checkphone = true;
+
+        }
+
+
+        //ktra dia chi
+        if (address == "") {
+            document.getElementById("erroraddress").innerHTML = "Vui lòng nhập địa chỉ";
+        } else {
+            document.getElementById("erroraddress").innerHTML = "";
+            checkaddress = true;
+
+        }
+
+
+        /*< ==================== them du lieu vao bang ====================>*/
+        if (checkname == true && checkid == true && checkaddress == true && checkphone == true && checkemail == true) {
+            var user = {
+                "username": username,
+                "id": id,
+                "email": email,
+                "phone": phone,
+                "address": address,
+
+            }
+            dataList.push(user);
+
+
+            var dataListTag = document.getElementById("result");
+            dataListTag.innerHTML +=
+                `<tr>
 						<td>${++count}</td>
 						<td>${username}</td>
 						<td>${id}</td>
@@ -543,20 +539,21 @@
 						<td><button class="fa fa-edit" onclick="editUser(${count - 1})">Sửa</button>
 						<button class="fa fa-trash" onclick="deleteUser(${count - 1})">Xóa</button></td>
 					</tr>`
-    }
-    //  }
+        }
 
-    function deleteUser(index) {
-        console.log(index)
-        dataList.splice(index, 1)
-        showUser();
-    }
+        //  }
 
-    function showUser() {
-        document.getElementById('result').innerHTML = ''
+        function deleteUser(index) {
+            console.log(index)
+            dataList.splice(index, 1)
+            showUser();
+        }
 
-        for (var i = 0; i < dataList.length; i++) {
-            document.getElementById('result').innerHTML += `<tr>
+        function showUser() {
+            document.getElementById('result').innerHTML = ''
+
+            for (var i = 0; i < dataList.length; i++) {
+                document.getElementById('result').innerHTML += `<tr>
 						<td>${i + 1}</td>
 						<td>${dataList[i].username}</td>
 						<td>${dataList[i].id}</td>
@@ -566,19 +563,20 @@
 						<td><button class="fa fa-edit" onclick="editUser(${i})">Sửa</button>
 						<button class="fa fa-trash" onclick="deleteUser(${i})">Xóa</button></td>
 					</tr>`
+            }
         }
-    }
 
-    function editUser(index) {
-        var user = dataList[index]
-        console.log(user)
-        document.getElementById('index').value = index
-        document.getElementById('username').value = user.username
-        document.getElementById('id-user').value = user.id
-        document.getElementById('email').value = user.email
-        document.getElementById('phone').value = user.phone
-        document.getElementById('address').value = user.address
+        function editUser(index) {
+            var user = dataList[index]
+            console.log(user)
+            document.getElementById('index').value = index
+            document.getElementById('username').value = user.username
+            document.getElementById('id-user').value = user.id
+            document.getElementById('email').value = user.email
+            document.getElementById('phone').value = user.phone
+            document.getElementById('address').value = user.address
 
+        }
     }
 </script>
 </body>
