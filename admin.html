@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Admin</title>
     <!-- Google Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet'
+          type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
 
@@ -30,6 +31,7 @@
             width: 149px;
             padding-top: 10px;
         }
+
         .menu-sidebar .logo {
             position: fixed;
             background: #f5f5f5;
@@ -41,38 +43,46 @@
             z-index: 3;
             width: 275px;
         }
+
         .navbar-sidebar {
             padding: 35px;
             padding-bottom: 0;
             width: 276px;
             background: #d8d8d8;
             position: fixed;
-            top:76px;
+            top: 76px;
             height: 100%;
         }
+
         .list-unstyled {
             padding-left: 0;
             list-style: none;
         }
-        .navbar__list li{
+
+        .navbar__list li {
             margin-bottom: 20px;
             padding-bottom: 20px;
         }
-        a{
+
+        a {
             text-decoration: none;
             color: black;
             font-size: 18px;
         }
-        a:hover{
+
+        a:hover {
             text-decoration: none;
             color: #2a6496;
         }
-        nav{
+
+        nav {
             display: block;
         }
-        i{
+
+        i {
             padding-right: 10px;
         }
+
         /*-----------*/
         .header-desktop {
             background: #f5f5f5;
@@ -84,9 +94,11 @@
             height: 75px;
             z-index: 3;
         }
-        .header-button{
+
+        .header-button {
             display: flex;
         }
+
         .header-desktop .section__content {
             overflow: visible;
             position: absolute;
@@ -94,6 +106,7 @@
             left: 0;
             right: 0;
         }
+
         .container-fluid {
             width: 100%;
             padding-right: 15px;
@@ -101,16 +114,19 @@
             margin-right: auto;
             margin-left: auto;
         }
+
         .header-wrap {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
+
         .form-header {
             display: flex;
             padding-top: 12px;
         }
-        .au-input{
+
+        .au-input {
             width: 382px;
         }
 
@@ -125,23 +141,27 @@
             margin-left: -3px;
             width: 10px;
         }
+
         .noti-wrap {
             height: 45px;
             display: flex;
             align-items: center;
         }
+
         .noti__item {
             position: relative;
             margin-right: 35px;
             display: inline-block;
             cursor: pointer;
         }
+
         .noti__item i {
             font-size: 30px;
             color: #a9b3c9;
             transition: all 0.5s ease;
             vertical-align: middle;
         }
+
         .noti__item .quantity {
             position: absolute;
             display: inline-block;
@@ -160,17 +180,21 @@
         .account-wrap {
             position: relative;
         }
-        .image{
+
+        .image {
             padding-top: 14px;
         }
+
         .page-wrapper {
             overflow: hidden;
             background: #e5e5e5;
             padding-bottom: 8vh;
         }
+
         .section__content--p30 {
             padding: 0 30px;
         }
+
         .container-fluid {
             width: 100%;
             padding-right: 15px;
@@ -178,7 +202,8 @@
             margin-right: auto;
             margin-left: auto;
         }
-        .contain-main{
+
+        .contain-main {
             position: absolute;
             top: 76px;
             left: 275px;
@@ -188,6 +213,7 @@
             padding-top: 20px;
             padding-left: 20px;
         }
+
         .table-data-feature .item {
             height: 30px;
             width: 30px;
@@ -196,32 +222,38 @@
             background: #e5e5e5;
             margin-right: 5px;
         }
-        table{
+
+        table {
             width: 93% !important;
             margin-top: 20px;
         }
+
         table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
         }
+
         /*---table data*/
-        .content{
+        .content {
             font-size: 28px;
             font-weight: bold;
 
         }
-        .input_box{
+
+        .input_box {
             margin-bottom: 7px;
             font-size: 16px;
         }
-        .input__ input{
+
+        .input__ input {
             width: 90%;
             border-radius: 7px;
             border: 1px solid #d8d8d8;
         }
 
-
-
+        .err {
+            color: red;
+        }
 
     </style>
 </head>
@@ -229,80 +261,81 @@
 <div class="page-wrapper">
     <!-------Menu SideBar------------->
     <aside class="menu-sidebar d-none d-lg-block">
-    <div class="logo">
-        <a href="#">
-            <img src="img/vendor/your-logo.png" alt="SM STORE">
-        </a>
-    </div>
-    <div class="menu-sidebar__content js-scrollbar1 ps">
-        <nav class="navbar-sidebar">
-            <ul class="list-unstyled navbar__list">
-                <li>
-                    <a class="user" href="admin.html" style="color: red">
-                        <i class="fa fa-user"></i>Quản lí người dùng</a>
+        <div class="logo">
+            <a href="#">
+                <img src="img/vendor/your-logo.png" alt="SM STORE">
+            </a>
+        </div>
+        <div class="menu-sidebar__content js-scrollbar1 ps">
+            <nav class="navbar-sidebar">
+                <ul class="list-unstyled navbar__list">
+                    <li>
+                        <a class="user" href="admin.html" style="color: red">
+                            <i class="fa fa-user"></i>Quản lí người dùng</a>
 
-                </li>
-                <li>
-                    <a href="adminProduct.html">
-                        <i class="fa fa-mobile-phone"></i>Quản lí sản phẩm</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-list"></i>Quản lí danh mục sản phẩm</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-credit-card"></i>Quản lí thanh toán</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-list"></i>Quản lí đơn hàng</a>
-                </li>
+                    </li>
+                    <li>
+                        <a href="adminProduct.html">
+                            <i class="fa fa-mobile-phone"></i>Quản lí sản phẩm</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-list"></i>Quản lí danh mục sản phẩm</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-credit-card"></i>Quản lí thanh toán</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-list"></i>Quản lí đơn hàng</a>
+                    </li>
 
-            </ul>
-        </nav>
-    </div>
- </aside>
+                </ul>
+            </nav>
+        </div>
+    </aside>
     <!-------------------------->
     <div class="page-container">
-    <header class="header-desktop">
-        <div class="section__content section__content--p30">
-            <div class="container-fluid">
-                <div class="header-wrap">
-                    <form class="form-header" action="" method="POST">
-                        <input class="au-input au-input--xl" type="text" name="search" placeholder="Tìm kiếm dữ liệu">
-                        <button class="au-btn--submit" type="submit">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </form>
-                    <div class="header-button">
-                        <div class="noti-wrap">
-                            <div class="noti__item js-item-menu">
-                                <i class="fa fa-comment"></i>
-                                <span class="quantity">1</span>
+        <header class="header-desktop">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="header-wrap">
+                        <form class="form-header" action="" method="POST">
+                            <input class="au-input au-input--xl" type="text" name="search"
+                                   placeholder="Tìm kiếm dữ liệu">
+                            <button class="au-btn--submit" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </form>
+                        <div class="header-button">
+                            <div class="noti-wrap">
+                                <div class="noti__item js-item-menu">
+                                    <i class="fa fa-comment"></i>
+                                    <span class="quantity">1</span>
+                                </div>
+                                <div class="noti__item js-item-menu">
+                                    <i class="fa fa-envelope"></i>
+                                    <span class="quantity">1</span>
+                                </div>
+                                <div class="noti__item js-item-menu">
+                                    <i class="fa fa-bell"></i>
+                                    <span class="quantity">3</span>
+                                </div>
                             </div>
-                            <div class="noti__item js-item-menu">
-                                <i class="fa fa-envelope"></i>
-                                <span class="quantity">1</span>
-                            </div>
-                            <div class="noti__item js-item-menu">
-                                <i class="fa fa-bell"></i>
-                                <span class="quantity">3</span>
-                            </div>
-                        </div>
-                        <div class="account-wrap">
-                            <div class="account-item clearfix js-item-menu">
-                                <div class="image">
-                                    <a href="#"><i class="fa fa-user"></i>SM ADMIN</a>
+                            <div class="account-wrap">
+                                <div class="account-item clearfix js-item-menu">
+                                    <div class="image">
+                                        <a href="#"><i class="fa fa-user"></i>SM ADMIN</a>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
     </div>
     <!------------------Table Data--------------------------------->
     <div class="contain-main">
@@ -315,11 +348,15 @@
                     <div class="input_box">
                         <div class="text">
                             <span>Tên khách hàng</span>
-                            <input type="number" name="index" id="index" value="" hidden="true">
+                            <input type="text" name="index" id="index" value="" hidden="true">
 
                         </div>
                         <div class="input__">
                             <input id="username" type="text" name="username">
+                        </div>
+                        <div class="err">
+                            <span id="errorname"></span>
+
                         </div>
 
                     </div>
@@ -331,6 +368,10 @@
                             <input id="id-user" type="text" name="id-user">
                         </div>
 
+                        <div class="err">
+                            <span id="errorid"></span>
+
+                        </div>
                     </div>
                     <div class="input_box">
                         <div class="text">
@@ -340,6 +381,10 @@
                             <input id="email" type="text" name="email">
                         </div>
 
+                        <div class="err">
+                            <span id="erroremail"></span>
+
+                        </div>
                     </div>
                     <div class="input_box">
                         <div class="text">
@@ -348,7 +393,10 @@
                         <div class="input__">
                             <input id="phone" type="text" name="phone">
                         </div>
+                        <div class="err">
+                            <span id="errorphone"></span>
 
+                        </div>
                     </div>
                     <div class="input_box">
                         <div class="text">
@@ -358,6 +406,10 @@
                             <input id="address" type="text" name="address">
                         </div>
 
+                        <div class="err">
+                            <span id="erroraddress"></span>
+
+                        </div>
                     </div>
                     <div class="button">
                         <input type="submit" value="Cập nhật" onclick="addUser();return false">
@@ -391,8 +443,9 @@
     </div>
 </div>
 <script type="text/javascript">
-    var count=0;
-    var dataList=[];
+    var count = 0;
+    var dataList = [];
+
     function addUser() {
         var index = document.getElementById('index').value;
         var username = document.getElementById("username").value;
@@ -400,19 +453,84 @@
         var email = document.getElementById("email").value;
         var phone = document.getElementById("phone").value;
         var address = document.getElementById("address").value;
+        var letter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        var checkname = false;
+        var checkid = false;
+        var checkphone = false;
+        var checkaddress = false;
+        var checkemail = false;
 
-        var user = {
-            "username": username,
-            "id": id,
-            "email": email,
-            "phone": phone,
-            "address": address
+        /*<=============================Kiem tra du lieu=============================>*/
+
+        //ktra name
+        if (username == "") {
+            document.getElementById("errorname").innerHTML = "Vui lòng nhập tên khách hàng";
+        } else {
+            document.getElementById("errorname").innerHTML = "";
+            checkname = true;
+        }
+
+        // kiem tra ma KH
+        if (id == "") {
+            document.getElementById("errorid").innerHTML = " Vui lòng nhập mã khách hàng"
+        } else {
+            document.getElementById("errorid").innerHTML = "";
+            checkid = true;
 
         }
-        dataList.push(user);
-        var dataListTag = document.getElementById("result");
-        dataListTag.innerHTML +=
-            `<tr>
+
+        //ktra email
+        if (email == "") {
+            document.getElementById("erroremail").innerHTML = "Vui lòng nhập email";
+
+        } else if (!email.match(letter)) {
+            document.getElementById("erroremail").innerHTML = "Vui lòng nhập đúng định dạng email";
+
+
+        } else {
+            document.getElementById("erroremail").innerHTML = "";
+            checkemail = true;
+
+        }
+
+        //ktra phone
+        if (phone == "") {
+            document.getElementById("errorphone").innerHTML = "Vui lòng nhập số điện thoại";
+        } else if (isNaN(phone)) {
+            document.getElementById("errorphone").innerHTML = "Chỉ cho phép nhập số";
+        } else {
+            document.getElementById("errorphone").innerHTML = "";
+            checkphone = true;
+
+        }
+
+
+        //ktra dia chi
+        if (address == "") {
+            document.getElementById("erroraddress").innerHTML = "Vui lòng nhập địa chỉ";
+        } else {
+            document.getElementById("erroraddress").innerHTML = "";
+            checkaddress = true;
+
+        }
+
+
+        /*==================== them du lieu vao bang ====================*/
+        if (checkname == true && checkid == true && checkaddress == true && checkphone == true &&checkemail == true ) {
+            var user = {
+                "username": username,
+                "id": id,
+                "email": email,
+                "phone": phone,
+                "address": address
+
+            }
+            dataList.push(user);
+
+
+            var dataListTag = document.getElementById("result");
+            dataListTag.innerHTML +=
+                `<tr>
 						<td>${++count}</td>
 						<td>${username}</td>
 						<td>${id}</td>
@@ -422,7 +540,9 @@
 						<td><button class="fa fa-edit" onclick="editUser(${count - 1})">Sửa</button></td>
 						<td><button class="fa fa-trash" onclick="deleteUser(${count - 1})">Xóa</button></td>
 					</tr>`
+        }
     }
+
     function deleteUser(index) {
         console.log(index)
         dataList.splice(index, 1)
@@ -434,7 +554,7 @@
 
         for (var i = 0; i < dataList.length; i++) {
             document.getElementById('result').innerHTML += `<tr>
-						<td>${i+1}</td>
+						<td>${i + 1}</td>
 						<td>${dataList[i].username}</td>
 						<td>${dataList[i].id}</td>
 						<td>${dataList[i].email}</td>
@@ -445,6 +565,7 @@
 					</tr>`
         }
     }
+
     function editUser(index) {
         var user = dataList[index]
         console.log(user)
