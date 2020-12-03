@@ -460,76 +460,80 @@
         var checkemail = false;
 
         /*<=============================Kiem tra du lieu=============================>*/
+        /*
 
-        //ktra name
-        if (username == "") {
-            document.getElementById("errorname").innerHTML = "Vui lòng nhập tên khách hàng";
-        } else {
-            document.getElementById("errorname").innerHTML = "";
-            checkname = true;
-        }
+                //ktra name
+                if (username == "") {
+                    document.getElementById("errorname").innerHTML = "Vui lòng nhập tên khách hàng";
+                } else {
+                    document.getElementById("errorname").innerHTML = "";
+                    checkname = true;
+                }
 
-        // kiem tra ma KH
-        if (id == "") {
-            document.getElementById("errorid").innerHTML = " Vui lòng nhập mã khách hàng"
-        } else {
-            document.getElementById("errorid").innerHTML = "";
-            checkid = true;
+                // kiem tra ma KH
+                if (id == "") {
+                    document.getElementById("errorid").innerHTML = " Vui lòng nhập mã khách hàng"
+                } else {
+                    document.getElementById("errorid").innerHTML = "";
+                    checkid = true;
 
-        }
+                }
 
-        //ktra email
-        if (email == "") {
-            document.getElementById("erroremail").innerHTML = "Vui lòng nhập email";
+                //ktra email
+                if (email == "") {
+                    document.getElementById("erroremail").innerHTML = "Vui lòng nhập email";
 
-        } else if (!email.match(letter)) {
-            document.getElementById("erroremail").innerHTML = "Vui lòng nhập đúng định dạng email";
-
-
-        } else {
-            document.getElementById("erroremail").innerHTML = "";
-            checkemail = true;
-
-        }
-
-        //ktra phone
-        if (phone == "") {
-            document.getElementById("errorphone").innerHTML = "Vui lòng nhập số điện thoại";
-        } else if (isNaN(phone)) {
-            document.getElementById("errorphone").innerHTML = "Chỉ cho phép nhập số";
-        } else {
-            document.getElementById("errorphone").innerHTML = "";
-            checkphone = true;
-
-        }
+                } else if (!email.match(letter)) {
+                    document.getElementById("erroremail").innerHTML = "Vui lòng nhập đúng định dạng email";
 
 
-        //ktra dia chi
-        if (address == "") {
-            document.getElementById("erroraddress").innerHTML = "Vui lòng nhập địa chỉ";
-        } else {
-            document.getElementById("erroraddress").innerHTML = "";
-            checkaddress = true;
+                } else {
+                    document.getElementById("erroremail").innerHTML = "";
+                    checkemail = true;
 
-        }
+                }
 
+                //ktra phone
+                if (phone == "") {
+                    document.getElementById("errorphone").innerHTML = "Vui lòng nhập số điện thoại";
+                } else if (isNaN(phone)) {
+                    document.getElementById("errorphone").innerHTML = "Chỉ cho phép nhập số";
+                } else {
+                    document.getElementById("errorphone").innerHTML = "";
+                    checkphone = true;
+
+                }
+
+
+                //ktra dia chi
+                if (address == "") {
+                    document.getElementById("erroraddress").innerHTML = "Vui lòng nhập địa chỉ";
+                } else {
+                    document.getElementById("erroraddress").innerHTML = "";
+                    checkaddress = true;
+
+                }
+
+        */
 
         /*==================== them du lieu vao bang ====================*/
-        if (checkname == true && checkid == true && checkaddress == true && checkphone == true &&checkemail == true ) {
-            var user = {
-                "username": username,
-                "id": id,
-                "email": email,
-                "phone": phone,
-                "address": address
+        /*
+                if (checkname == true && checkid == true && checkaddress == true && checkphone == true &&checkemail == true ) {
+        */
+        var user = {
+            "username": username,
+            "id": id,
+            "email": email,
+            "phone": phone,
+            "address": address,
 
-            }
-            dataList.push(user);
+        }
+        dataList.push(user);
 
 
-            var dataListTag = document.getElementById("result");
-            dataListTag.innerHTML +=
-                `<tr>
+        var dataListTag = document.getElementById("result");
+        dataListTag.innerHTML +=
+            `<tr>
 						<td>${++count}</td>
 						<td>${username}</td>
 						<td>${id}</td>
@@ -539,8 +543,8 @@
 						<td><button class="fa fa-edit" onclick="editUser(${count - 1})">Sửa</button>
 						<button class="fa fa-trash" onclick="deleteUser(${count - 1})">Xóa</button></td>
 					</tr>`
-        }
     }
+    //  }
 
     function deleteUser(index) {
         console.log(index)
@@ -559,8 +563,8 @@
 						<td>${dataList[i].email}</td>
 						<td>${dataList[i].phone}</td>
 						<td>${dataList[i].address}</td>
-						<td><button class="fa fa-edit" onclick="editUser(${i})">Sửa</button></td>
-						<td><button class="fa fa-trash" onclick="deleteUser(${i})">Xóa</button></td>
+						<td><button class="fa fa-edit" onclick="editUser(${i})">Sửa</button>
+						<button class="fa fa-trash" onclick="deleteUser(${i})">Xóa</button></td>
 					</tr>`
         }
     }
