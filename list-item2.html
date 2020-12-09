@@ -34,13 +34,62 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
-        .col-md-3 col-sm-6{
-            float: left;
-            display: flex;
-        }
         .product-upper> img{
             width: 195px;
             height: 200px;
+        }
+        .btn-group-choice{
+            text-align: right;
+            padding-right: 252px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            background: #fbfbfb;
+
+        }
+        .btn-default{
+            width: 123px;
+
+        }
+        .col-md-3-3{
+            width: 25%;
+            background: #f1f1f1;
+            border: 1px solid;
+            margin-bottom: 5px;
+            padding-bottom: 20px;
+            padding-top: 15px;
+        }
+        .col-md-3-3.list-group-item {
+            float: none;
+            width: 100%;
+            background-color: #fff;
+            margin-bottom: 10px;
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            height: 227px;
+        }
+
+        .col-md-3-3.list-group-item:nth-of-type(odd):hover, .col-md-3-3.list-group-item:hover {
+            background: #428bca;
+        }
+        .col-md-3-3.list-group-item img {
+            margin-right: 10px;
+        }
+        .col-md-3-3.list-group-item .caption {
+            padding: 9px 9px 0px 9px;
+        }
+        .col-md-3-3.list-group-item:nth-of-type(odd) {
+            background: #eeeeee;
+        }
+        .col-md-3-3.list-group-item:before, .col-md-3.list-group-item:after {
+            display: table; content:"";
+        }
+        .col-md-3-3.list-group-item img {
+            float: left;
+        }
+        .col-md-3-3.list-group-item:after {
+            clear: both;
         }
     </style>
 </head>
@@ -143,17 +192,26 @@
         </div>
     </div>
 </div>
+<!---------------------------->
+<div class="btn-group-choice">
+    <span>Chọn kiểu hiển thị</span>
+    <a href="list-item2.html" id="list" class="btn btn-default btn-sm">
+        <span class="glyphicon glyphicon-th-list"> </span>Dạng danh sách</a>
+    <a href="list-item2.html" id="grid" class="btn btn-default btn-sm">
+        <span class="glyphicon glyphicon-th"></span>Dạng lưới</a>
+</div>
 
 
-<div class="single-product-area">
+
+<div id="products" class="single-product-area">
     <div class="zigzag-bottom"></div>
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
+            <div class="col-md-3-3 col-sm-6">
                     <div class="product-upper">
                         <img src="img/realme/Realme-6-pro.jpg" alt="">
                     </div>
+                     <div class="caption">
                     <h2><a href="">Realme 6 Pro</a></h2>
                     <div class="product-carousel-price">
                         <ins>7.990.000₫ </ins> <del> 8.990.000₫</del>
@@ -162,15 +220,15 @@
                     <div class="product-option-shop">
                         <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Thêm giỏ hàng</a>
                     </div>
-                </div>
+                     </div>
             </div>
 
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
+            <div class="col-md-3-3 col-sm-6">
                     <div class="product-upper">
                         <img src="img/realme/realme-6i-blue-400x460-400x460.png" alt="">
                     </div>
-                    <h2><a href="">Realme 6i</a></h2>
+                <div class="caption">
+                        <h2><a href="">Realme 6i</a></h2>
                     <div class="product-carousel-price">
                         <ins>6.990.000₫ </ins> <del> 7.990.000₫</del>
                     </div>
@@ -180,8 +238,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
+            <div class="col-md-3-3 col-sm-6">
                     <div class="product-upper">
                         <img src="img/realme/realme-6-xanh-400x460-1-400x460-1-400x460.png" alt="">
                     </div>
@@ -193,10 +250,8 @@
                     <div class="product-option-shop">
                         <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Thêm giỏ hàng</a>
                     </div>
-                </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
+            <div class="col-md-3-3 col-sm-6">
                     <div class="product-upper">
                         <img src="img/realme/realme-7-043120-113116-600x600.jpg" alt="">
                     </div>
@@ -208,10 +263,8 @@
                     <div class="product-option-shop">
                         <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Thêm giỏ hàng</a>
                     </div>
-                </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
+            <div class="col-md-3-3 col-sm-6">
                     <div class="product-upper">
                         <img src="img/realme/637381224777272345_realme-7i-blue-1.png" alt="">
                     </div>
@@ -223,10 +276,8 @@
                     <div class="product-option-shop">
                         <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Thêm giỏ hàng</a>
                     </div>
-                </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
+            <div class="col-md-3-3 col-sm-6">
                     <div class="product-upper">
                         <img src="img/realme/realme-7-pro-043220-013244-600x600.jpg" alt="">
                     </div>
@@ -238,11 +289,9 @@
                     <div class="product-option-shop">
                         <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Thêm giỏ hàng</a>
                     </div>
-                </div>
             </div>
 
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
+            <div class="col-md-3-3 col-sm-6">
                     <div class="product-upper">
                         <img src="img/oppo/oppo-reno4-pro-260820-040834-400x460.png" alt="">
                     </div>
@@ -254,12 +303,10 @@
                     <div class="product-option-shop">
                         <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Thêm giỏ hàng</a>
                     </div>
-                </div>
             </div>
 
 
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
+            <div class="col-md-3-3 col-sm-6">
                     <div class="product-upper">
                         <img src="img/oppo/oppo-a92.png" alt="">
                     </div>
@@ -271,11 +318,9 @@
                     <div class="product-option-shop">
                         <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Thêm giỏ hàng</a>
                     </div>
-                </div>
             </div>
 
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
+            <div class="col-md-3-3 col-sm-6">
                     <div class="product-upper">
                         <img src="img/oppo/oppo-a93.png" alt="">
                     </div>
@@ -287,11 +332,9 @@
                     <div class="product-option-shop">
                         <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Thêm giỏ hàng</a>
                     </div>
-                </div>
             </div>
 
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
+            <div class="col-md-3-3 col-sm-6">
                     <div class="product-upper">
                         <img src="img/oppo/oppo-find-x2.png" alt="">
                     </div>
@@ -303,10 +346,8 @@
                     <div class="product-option-shop">
                         <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Thêm giỏ hàng</a>
                     </div>
-                </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
+            <div class="col-md-3-3 col-sm-6">
                     <div class="product-upper">
                         <img src="img/oppo/oppo-a12.png" alt="">
                     </div>
@@ -318,10 +359,8 @@
                     <div class="product-option-shop">
                         <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Thêm giỏ hàng</a>
                     </div>
-                </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="single-shop-product">
+            <div class="col-md-3-3 col-sm-6">
                     <div class="product-upper">
                         <img src="img/oppo/oppo-a31-4gb-128gb-trang-400x460-400x460.png" alt="">
                     </div>
@@ -333,7 +372,6 @@
                     <div class="product-option-shop">
                         <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Thêm giỏ hàng</a>
                     </div>
-                </div>
             </div>
         </div>
 
@@ -459,5 +497,15 @@
 
 <!-- Main Script -->
 <script src="js/main.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#list').click(function (event){event.preventDefault();$('#products .col-md-3-3').addClass('list-group-item');});
+        $('#grid').click(function (event){event.preventDefault();$('#products .col-md-3-3').removeClass('list-group-item');
+            $('#products .col-md-3-3').addClass('grid-group-item');
+        });
+    });
+
+</script>
 </body>
 </html>
