@@ -181,14 +181,14 @@ URL: https://www.freshdesignweb.com/ustora/
                 <div class="product-content-right">
                     <div class="woocommerce">
                         <form method="post" action="#">
-                            <table cellspacing="0" class="shop_table cart">
+                            <table cellspacing="1" class="shop_table cart">
                                 <thead>
                                 <tr>
                                     <th class="product-remove">&nbsp;</th>
                                     <th class="product-thumbnail">&nbsp;</th>
                                     <th class="product-name">Sản phẩm</th>
                                     <th class="product-price">Giá</th>
-                                    <th class="product-quantity">Số lượng</th>
+                                    <th class="product-quantity" style="width: 24%">Số lượng</th>
                                     <th class="product-subtotal">Tổng giá</th>
                                 </tr>
                                 </thead>
@@ -229,7 +229,7 @@ URL: https://www.freshdesignweb.com/ustora/
                                             <input type="text" placeholder="Nhập mã..." value="" id="coupon_code" class="input-text" name="coupon_code">
                                             <input type="submit" value="Dùng" name="apply_coupon" class="button">
                                         </div>
-                                        <input type="submit" value="Cập nhật giỏ hàng" name="update_cart" class="button">
+                                        <input type="submit" value="Cập nhật" name="update_cart" class="button">
                                         <input type="submit" value="Thanh toán" name="proceed" class="checkout-button button alt wc-forward">
                                     </td>
                                 </tr>
