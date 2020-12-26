@@ -1,4 +1,6 @@
-package demo.user;
+package demo.page;
+
+import demo.filter.UserData;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,15 +23,6 @@ public class Login extends HttpServlet {
 
     }
 
-    static HashMap<String, String> dataAdmin = new HashMap<>();
-
-    static {
-        dataAdmin.put("quynhadmin", "456");
-        dataAdmin.put("hiepadmin", "456");
-        dataAdmin.put("thaiadmin", "456");
-        dataAdmin.put("webadmin", "456");
-
-    }
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -43,7 +36,7 @@ public class Login extends HttpServlet {
         String pass = request.getParameter("password");
         if (data.containsKey(username) && pass.equals(data.get(username))) {
             response.sendRedirect("Index");
-        } else if (dataAdmin.containsKey(username) && pass.equals(dataAdmin.get(username))) {
+        } else if (UserData.dataAdmin.containsKey(username) && pass.equals(UserData.dataAdmin.get(username))) {
             response.sendRedirect("Admin");
         } else {
             request.setAttribute("errmes", "Ban da dang nhap sai");

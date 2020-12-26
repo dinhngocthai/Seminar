@@ -4,28 +4,37 @@ package demo.beans;
 import java.io.Serializable;
 
 public class User implements Serializable {
+    private int id;
     private String fullName;
     private String username;
     private String password;
     private String email;
+    private String address;
     private int phone;
-    private String addresss;
-
     public User() {
 
     }
 
-    public User(String fullName, String username, String password, String email, int phone, String addresss) {
+    public User(int id ,String fullName, String username, String password, String address, String email, int phone) {
+        this.id=id;
         this.fullName = fullName;
         this.username = username;
         this.password = password;
         this.email = email;
         this.phone = phone;
-        this.addresss = addresss;
+        this.address = address;
     }
 /*
  ===============Getter and Setter ===============
 */
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getFullName() {
         return fullName;
@@ -67,11 +76,11 @@ public class User implements Serializable {
         this.phone = phone;
     }
 
-    public String getAddresss() {
-        return addresss;
+    public String getaddress() {
+        return address;
     }
 
-    public void setAddresss(String addresss) {
-        this.addresss = addresss;
+    public void setaddress(String address) {
+        this.address = address;
     }
 }
