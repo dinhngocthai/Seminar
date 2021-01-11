@@ -14,6 +14,6 @@ public class UserAccount extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    request.getRequestDispatcher("UserAccount.jsp").forward(request,response);
+    request.getRequestDispatcher("CustomerAccount.jsp").forward(request,response);
     }
 }
