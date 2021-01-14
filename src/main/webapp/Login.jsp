@@ -145,7 +145,7 @@
         </form>
 
         <div class="sign_Up">
-            <span class="text">Bạn có tài khoản chưa? <a href="signin.html">Đăng kí</a></span>
+            <span class="text">Bạn có tài khoản chưa? <a href="Signin.jsp">Đăng kí</a></span>
 
         </div>
     </div>

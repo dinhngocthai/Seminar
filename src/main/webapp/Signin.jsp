@@ -39,26 +39,33 @@
 
         <![endif]-->
         <style>
-            .container_form {
+            body{
+                background-image: url("img/vendor/hinhnen_login.png");
+                background-size: cover;
+            }
+            .container_form{
                 width: 1100px;
                 height: auto;
                 margin: auto;
                 padding: 10px;
-                background: #fbfbfb;
-                background-image: url("img/vendor/hinh-nen-huawei-mate-10-1.jpg");
-            }
 
-            .sign_in_form {
-                width: 400px;
-                padding: 33px;
+            }
+            .sign_in_form{
+                width: 70%;
+                padding-top: 33px;
+                padding-left: 33px;
+                padding-right: 33px;
                 height: auto;
-                background: #282f59;
+                background: #063050;
                 margin: auto;
                 border-radius: 12px;
                 padding-bottom: 28px;
-
             }
-
+            .sign_in_form .text{
+                color: white;
+                font-weight: bold;
+                font-size: 24px;
+            }
             .input_box {
                 padding-top: 11px;
                 position: relative;
@@ -82,22 +89,12 @@
                 padding-top: 22px;
             }
 
-            .button1 {
+            .button1{
 
-                color: #e8e5e5;
-                padding-top: 5px;
-                padding-bottom: 5px;
+                background:#114477 !important;
                 border-radius: 20px;
-                width: 147px;
+                width: 166px;
                 height: 45px;
-                cursor: pointer;
-            }
-
-            .image img {
-                background: white;
-                border-radius: 50%;
-                box-shadow: 0px 0px 23px -3px rgb(50, 44, 50);
-                align-items: center;
             }
 
             .err {
@@ -108,21 +105,9 @@
 
     </head>
 <body>
-<jsp:include page="Header.jsp"></jsp:include>
-<div class="product-big-title-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="product-bit-title text-center">
-                    <h2>Đăng kí</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="container_form">
     <div class="sign_in_form">
+        <span class="text">ĐĂNG KÍ</span>
         <form id="Sign_In" method="post" action="" onsubmit="getInfo();return false">
             <div class="input_box">
                 <input id="username" name="username" type="text" placeholder="Tên người dùng" value="">
@@ -132,8 +117,7 @@
                 <span id="errorname"></span>
 
             </div>
-
-
+            <-------------------------------------------------------->
             <div class="input_box">
                 <input id="last_first_name" name="lastfirstname" type="text" placeholder="Họ và tên" value="">
                 <!--<span id="errorname_1" class="err"></span> -->
@@ -142,10 +126,10 @@
             <div class="err">
                 <span id="errorname_1"></span>
             </div>
-
+            <----------------------------------------------------->
 
             <div class="input_box">
-                <input id="email" name="email" type="text" placeholder="Email" value="">
+                <input id="email"  name="email" type="text" placeholder="Email" value="">
                 <!-- <span id="erroremail" class="err"></span> -->
 
             </div>
@@ -153,8 +137,7 @@
                 <span id="erroremail"></span>
 
             </div>
-
-
+            <-------------------------------------------------------->
             <div class="input_box">
                 <input id="phone" name="phone" type="text" placeholder="Số điện thoại" value="">
                 <!-- <span id="errorphone" class="err"></span>-->
@@ -164,7 +147,7 @@
                 <span id="errorphone"></span>
 
             </div>
-
+            <---------------------------------------------------->
             <div class="input_box">
                 <input id="address" name="address" type="text" placeholder="Địa chỉ" value="">
                 <!--  <span id="erroradd" class="err"></span> -->
@@ -174,6 +157,7 @@
                 <span id="erroradd"></span>
 
             </div>
+            <----------------------------------------------------------->
             <div class="input_box">
                 <input id="password" name="password" type="password" placeholder="Mật khẩu" value="">
                 <!--  <span id="errorpass" class="err"></span>-->
@@ -183,8 +167,7 @@
                 <span id="errorpass"></span>
 
             </div>
-
-
+            <-------------------------------------->
             <div class="input_box">
                 <input id="repassword" name="repassword" type="password" placeholder="Nhập lại mật khẩu" value="">
                 <!-- <span id="errorrepass" class="err"></span>-->
@@ -194,16 +177,70 @@
                 <span id="errorrepass"></span>
 
             </div>
-
-
+            <--------------------------------------------->
 
             <div class="button">
-                <input class="button1" type="submit" value="Tạo tài khoản"> <!--onclick="getInfo(); return false"-->
-                </input>
+                <input class="button1" type="submit" value="Tạo tài khoản"> <!--onclick="getInfo(); return false"-->></input>
             </div>
         </form>
     </div>
 </div>
-<jsp:include page="Footer.jsp"></jsp:include>
+
+<script>
+    function getInfo(){
+        var username=document.getElementById("username").value;
+        var last_first_name= document.getElementById("last_first_name").value;
+        var email= document.getElementById("email").value;
+        var phone=document.getElementById("phone").value;
+        var address=document.getElementById("address").value;
+        var password=document.getElementById("password").value;
+        var repassword=document.getElementById("repassword").value;
+        //kiem tra du lieu
+        if(username=="") {
+            document.getElementById("errorname").innerHTML="Vui lòng nhập tên người dùng";
+        } else {
+            document.getElementById("errorname").innerHTML="";
+        }
+        //ktra name
+        if(last_first_name==""){
+            document.getElementById("errorname_1").innerHTML="Vui lòng nhập họ và tên";
+        }  else {
+            document.getElementById("errorname_1").innerHTML="";
+        }
+        //ktra email
+        if(email==""){
+            document.getElementById("erroremail").innerHTML="Vui lòng nhập email";
+        }  else {
+            document.getElementById("erroremail").innerHTML="";
+        }
+        //ktra phone
+        if(phone==""){
+            document.getElementById("errorphone").innerHTML="Vui lòng nhập số điện thoại";
+        }  else {
+            document.getElementById("errorphone").innerHTML="";
+        }
+        //ktra dia chi
+        if(address==""){
+            document.getElementById("erroradd").innerHTML="Vui lòng nhập địa chỉ";
+        }  else {
+            document.getElementById("erroradd").innerHTML="";
+        }
+        //ktra mat khau
+        if(password==""){
+            document.getElementById("errorpass").innerHTML="Vui lòng nhập mật khẩu";
+        }  else {
+            document.getElementById("errorpass").innerHTML="";
+        }
+        if(repassword==""){
+            document.getElementById("errorrepass").innerHTML="Vui lòng nhập lại mật khẩu";
+        }  else {
+            document.getElementById("errorrepass").innerHTML="";
+        }
+
+
+
+    }
+</script>
+
 </body>
 </html>
