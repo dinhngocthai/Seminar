@@ -37,23 +37,33 @@
 
     <![endif]-->
     <style>
+        body{
+            background-image: url("img/vendor/hinhnen_login.png");
+            background-size: cover;
+        }
         .container_form{
             width: 1100px;
             height: auto;
             margin: auto;
-            padding: 10px;
-            background: #fbfbfb;
-            background-image: url("img/vendor/hinh-nen-huawei-mate-10-1.jpg");
+            padding: 80px;
+
+
+
         }
         .sign_in_form{
-            width: 400px;
+            width: 62%;
             padding: 33px;
             height: auto;
-            background: #282f59;
+            background: #053260;
             margin: auto;
             border-radius: 12px;
             padding-bottom: 28px;
 
+        }
+        .sign_in_form .text{
+            color:white;
+            font-weight: bold;
+            font-size: 23px;
         }
         .input_box{
             padding-top: 26px;
@@ -85,21 +95,16 @@
             padding-top: 22px;
         }
         .button1{
-
-            color: #e8e5e5;
             padding-top: 5px;
             padding-bottom: 5px;
             border-radius: 20px;
             width: 132px;
             height: 45px;
             cursor: pointer;
+            background:#114477 !important;
         }
-
-        .image img{
-            background: white;
-            border-radius: 50%;
-            box-shadow: 0px 0px 23px -3px rgb(50, 44, 50);
-            align-items: center;
+        .button1:hover{
+            background: #0f1113!important;
         }
 
         .sign_Up{
@@ -110,26 +115,17 @@
 
         }
 
+
     </style>
 </head>
 
 <body>
-<jsp:include page="Header.jsp"></jsp:include>
-<div class="product-big-title-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="product-bit-title text-center">
-                    <h2>Đăng nhập</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="container_form">
     <div class="sign_in_form">
         <form id="Sign_In" method="get" action="Login">
+            <span class="text">ĐĂNG NHẬP</span>
+
             <div class="input_box">
                 <input id="username" name="username" type="text" placeholder="Tên người dùng">
 
@@ -144,17 +140,16 @@
 
             </div>
             <div class="button">
-                <input class="button" type="submit" value="Đăng nhập">
+                <input class="button1" type="submit" value="Đăng nhập">
             </div>
         </form>
 
         <div class="sign_Up">
-            <span>Bạn có tài khoản chưa? <a href="signin.html">Đăng kí</a></span>
+            <span class="text">Bạn có tài khoản chưa? <a href="signin.html">Đăng kí</a></span>
 
         </div>
     </div>
 </div>
-<jsp:include page="Footer.jsp"></jsp:include>
 </body>
 
 <!-- Latest jQuery form server -->

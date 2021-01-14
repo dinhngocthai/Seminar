@@ -1473,27 +1473,7 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     align-items: center;
     display: inline;
 }
-.h_sx >li a{
-    /*size: auto;*/
-}
-.container_form{
-    width: 1100px;
-    height: auto;
-    margin: auto;
-    padding: 10px;
-    background: #fbfbfb;
-    background-image: url("img/vendor/hinh-nen-huawei-mate-10-1.jpg");
-}
-.sign_in_form{
-    width: 400px;
-    padding: 33px;
-    height: auto;
-    background: #282f59;
-    margin: auto;
-    border-radius: 12px;
-    padding-bottom: 28px;
 
-}
 .input_box{
     padding-top: 26px;
     position: relative;
@@ -1517,21 +1497,6 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 .label_1{
     text-align: right;
     padding-top: 17px;
-}
-.button{
-    width: 132px;
-    margin: auto;
-    padding-top: 22px;
-}
-.button1{
-
-    color: #e8e5e5;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 20px;
-    width: 132px;
-    height: 45px;
-    cursor: pointer;
 }
 
 .image img{
