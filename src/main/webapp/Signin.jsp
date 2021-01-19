@@ -60,6 +60,7 @@
                 margin: auto;
                 border-radius: 12px;
                 padding-bottom: 28px;
+                margin-top: 89px;
             }
             .sign_in_form .text{
                 color: white;
@@ -118,15 +119,6 @@
 
             </div>
             <-------------------------------------------------------->
-            <div class="input_box">
-                <input id="last_first_name" name="lastfirstname" type="text" placeholder="Họ và tên" value="">
-                <!--<span id="errorname_1" class="err"></span> -->
-            </div>
-
-            <div class="err">
-                <span id="errorname_1"></span>
-            </div>
-            <----------------------------------------------------->
 
             <div class="input_box">
                 <input id="email"  name="email" type="text" placeholder="Email" value="">
@@ -138,26 +130,6 @@
 
             </div>
             <-------------------------------------------------------->
-            <div class="input_box">
-                <input id="phone" name="phone" type="text" placeholder="Số điện thoại" value="">
-                <!-- <span id="errorphone" class="err"></span>-->
-
-            </div>
-            <div class="err">
-                <span id="errorphone"></span>
-
-            </div>
-            <---------------------------------------------------->
-            <div class="input_box">
-                <input id="address" name="address" type="text" placeholder="Địa chỉ" value="">
-                <!--  <span id="erroradd" class="err"></span> -->
-
-            </div>
-            <div class="err">
-                <span id="erroradd"></span>
-
-            </div>
-            <----------------------------------------------------------->
             <div class="input_box">
                 <input id="password" name="password" type="password" placeholder="Mật khẩu" value="">
                 <!--  <span id="errorpass" class="err"></span>-->
@@ -189,10 +161,7 @@
 <script>
     function getInfo(){
         var username=document.getElementById("username").value;
-        var last_first_name= document.getElementById("last_first_name").value;
         var email= document.getElementById("email").value;
-        var phone=document.getElementById("phone").value;
-        var address=document.getElementById("address").value;
         var password=document.getElementById("password").value;
         var repassword=document.getElementById("repassword").value;
         //kiem tra du lieu
@@ -201,30 +170,13 @@
         } else {
             document.getElementById("errorname").innerHTML="";
         }
-        //ktra name
-        if(last_first_name==""){
-            document.getElementById("errorname_1").innerHTML="Vui lòng nhập họ và tên";
-        }  else {
-            document.getElementById("errorname_1").innerHTML="";
-        }
         //ktra email
         if(email==""){
             document.getElementById("erroremail").innerHTML="Vui lòng nhập email";
         }  else {
             document.getElementById("erroremail").innerHTML="";
         }
-        //ktra phone
-        if(phone==""){
-            document.getElementById("errorphone").innerHTML="Vui lòng nhập số điện thoại";
-        }  else {
-            document.getElementById("errorphone").innerHTML="";
-        }
-        //ktra dia chi
-        if(address==""){
-            document.getElementById("erroradd").innerHTML="Vui lòng nhập địa chỉ";
-        }  else {
-            document.getElementById("erroradd").innerHTML="";
-        }
+
         //ktra mat khau
         if(password==""){
             document.getElementById("errorpass").innerHTML="Vui lòng nhập mật khẩu";
