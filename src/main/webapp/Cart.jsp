@@ -1,3 +1,7 @@
+<%@ page import="demo.model.Cart" %>
+<%@ page import="java.util.Collection" %>
+<%@ page import="demo.beans.Product" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -145,14 +149,14 @@ URL: https://www.freshdesignweb.com/ustora/
                 <div class="single-sidebar">
                     <h2 class="sidebar-title">Sản Phẩm</h2>
                     <c:forEach items="${ListOPPO}" var="p">
-                    <div class="thubmnail-recent">
-                        <img src="${p.img}" class="recent-thumb" alt="">
-                        <h2><a href="single-product.html">${p.name}</a></h2>
-                        <div class="product-sidebar-price">
-                            <ins>${p.price}đ</ins>
-                            <del>${p.priceSale}đ</del>
+                        <div class="thubmnail-recent">
+                            <img src="${p.img}" class="recent-thumb" alt="">
+                            <h2><a href="single-product.html">${p.name}</a></h2>
+                            <div class="product-sidebar-price">
+                                <ins>${p.price}đ</ins>
+                                <del>${p.priceSale}đ</del>
+                            </div>
                         </div>
-                    </div>
                     </c:forEach>
                 </div>
 
@@ -160,95 +164,104 @@ URL: https://www.freshdesignweb.com/ustora/
             <!------End-Product-Area------>
 
 
-                <div class="product-content-right">
-                    <div class="woocommerce">
-                        <form method="post" action="#">
-                            <table cellspacing="1" class="shop_table cart">
-                                <thead>
-                                <tr>
-                                    <th class="product-remove">&nbsp;</th>
-                                    <th class="product-thumbnail">&nbsp;</th>
-                                    <th class="product-name">Sản phẩm</th>
-                                    <th class="product-price">Giá</th>
-                                    <th class="product-quantity" style="width: 24%">Số lượng</th>
-                                    <th class="product-subtotal">Tổng giá</th>
-                                </tr>
-                                </thead>
-                                <tbody>
+            <div class="product-content-right">
+                <div class="woocommerce">
+                    <form method="post" action="#">
+                        <table cellspacing="1" class="shop_table cart">
+                            <thead>
+                            <tr>
+                                <th class="product-remove">&nbsp;</th>
+                                <th class="product-thumbnail">&nbsp;</th>
+                                <th class="product-name">Sản phẩm</th>
+                                <th class="product-price">Giá</th>
+                                <th class="product-quantity" style="width: 24%">Số lượng</th>
+                                <th class="product-subtotal">Tổng giá</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <% Cart c = Cart.getCart(session);
+                                Collection<Product> data = c.getData();
+                                request.setAttribute("data",data);
+                            %>
+                            <c:forEach items="$(data)" var="d">
                                 <tr class="cart_item">
                                     <td class="product-remove">
                                         <a title="Remove this item" class="remove" href="#">×</a>
                                     </td>
 
                                     <td class="product-thumbnail">
-                                        <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="img/vendor/product-thumb-2.jpg"></a>
+                                        <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="$(d.img)"></a>
                                     </td>
 
                                     <td class="product-name">
-                                        <a href="single-product.html">Samsung Galaxy J7 Prime</a>
+                                        <a href="single-product.html">$(d.name)</a>
                                     </td>
 
                                     <td class="product-price">
-                                        <span class="amount">3.490.000₫</span>
+                                        <span class="amount">$(d.price)</span>
                                     </td>
+
 
                                     <td class="product-quantity">
                                         <div class="quantity buttons_added">
                                             <input type="button" class="minus" value="-"  >
-                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1">
+                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="$(d.quantity)" min="0" step="1">
                                             <input type="button" class="plus" value="+" >
                                         </div>
                                     </td>
 
                                     <td class="product-subtotal">
-                                        <span class="amount">3.490.000₫</span>
+                                        <span class="amount">$(d.price * d.quantity)</span>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="actions" colspan="6">
-                                        <div class="coupon">
-                                            <label for="coupon_code">Mã giảm giá:</label>
-                                            <input type="text" style="width: 300px;" placeholder="Nhập mã..." value="" id="coupon_code" class="input-text" name="coupon_code">
-                                        </div>
-                                        <input type="submit" value="Dùng" name="apply_coupon" class="button">
-                                        <input type="submit" value="Cập nhật" name="update_cart" class="button">
-                                        <input type="submit" value="Thanh toán" name="proceed" class="checkout-button button alt wc-forward">
-                                    </td>
+                            </c:forEach>
+
+                            <tr>
+                                <td class="actions" colspan="6">
+                                    <div class="coupon">
+                                        <label for="coupon_code">Mã giảm giá:</label>
+                                        <input type="text" style="width: 300px;" placeholder="Nhập mã..." value="" id="coupon_code" class="input-text" name="coupon_code">
+                                    </div>
+                                    <input type="submit" value="Dùng" name="apply_coupon" class="button">
+                                    <input type="submit" value="Cập nhật" name="update_cart" class="button">
+                                    <input type="submit" value="Thanh toán" name="proceed" class="checkout-button button alt wc-forward">
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </form>
+
+                    <div class="cart-collaterals">
+
+
+
+
+                        <div class="cart_totals ">
+                            <h2>Tổng tiền</h2>
+
+                            <table cellspacing="0">
+                                <tbody>
+                                <tr class="cart-subtotal">
+                                    <th>Giỏ hàng</th>
+                                    <td><span class="amount">3.490.000₫</span></td>
+                                </tr>
+
+                                <tr class="shipping">
+                                    <th>Phí vận chuyển</th>
+                                    <td>Miễn phí</td>
+                                </tr>
+
+                                <tr class="order-total">
+                                    <th>Tổng</th>
+                                    <td><strong><span class="amount">3.490.000₫</span></strong> </td>
                                 </tr>
                                 </tbody>
                             </table>
-                        </form>
-
-                        <div class="cart-collaterals">
-
-
-
-
-                            <div class="cart_totals ">
-                                <h2>Tổng tiền</h2>
-
-                                <table cellspacing="0">
-                                    <tbody>
-                                    <tr class="cart-subtotal">
-                                        <th>Giỏ hàng</th>
-                                        <td><span class="amount">3.490.000₫</span></td>
-                                    </tr>
-
-                                    <tr class="shipping">
-                                        <th>Phí vận chuyển</th>
-                                        <td>Miễn phí</td>
-                                    </tr>
-
-                                    <tr class="order-total">
-                                        <th>Tổng</th>
-                                        <td><strong><span class="amount">3.490.000₫</span></strong> </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 </div>
@@ -273,6 +286,6 @@ URL: https://www.freshdesignweb.com/ustora/
 <script src="js/jquery-3.5.1.min.js"></script>
 
 
-</script>
+</body>
 </body>
 </html>

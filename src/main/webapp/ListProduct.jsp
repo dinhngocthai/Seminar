@@ -57,6 +57,7 @@ URL: https://www.freshdesignweb.com/ustora/
             padding-top: 25px;
             padding-bottom: 25px;
             background: #fbfbfb;
+            clear: both;
 
         }
 
@@ -114,6 +115,82 @@ URL: https://www.freshdesignweb.com/ustora/
         .col-md-3-3.list-group-item:after {
             clear: both;
         }
+        .navbar-menu{
+            margin-left: 155px;
+
+        }
+        .navbar-menu .price >ul{
+            display: flex;
+            margin-left: 10px;
+
+        }
+        .price span{
+            margin:10px;
+        }
+        .navbar-menu .price >ul >li{
+            list-style-type: none;
+            margin: 10px;
+
+        }
+        .menu-price .fl{
+            float: left;
+        }
+
+        #products{
+            float: right;
+            margin-left: 334px;
+            position: absolute;
+
+        }
+        #container-filter{
+            float: left;
+            width: 645px;
+            margin-left: 40px;
+
+
+        }
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+        .brand >ul>li{
+            list-style-type: none;
+            height: 40px;
+            border: 1px solid #bbbbbf;
+            padding: 5px;
+            padding-top: 15px;
+            text-align: center;
+
+        }
+
+        .brand a{
+            color: black;
+            text-decoration: none;
+        }
+        .brand a:hover{
+            color: #31b0d5;
+        }
+        .brand .sub-title{
+            height: 40px;
+            border: 1px solid #bbbbbf;
+            text-align: center;
+            font-size: 17px;
+            font-weight: bold;
+            padding-top: 8px;
+            background: #5a88ca;
+            color: white;
+
+
+
+        }
+        .container-filter{
+            clear: both;
+            padding-top: 10px;
+
+        }
+
 
 
     </style>
@@ -131,6 +208,23 @@ URL: https://www.freshdesignweb.com/ustora/
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="menu-price">
+    <div class="navbar-menu">
+        <div class="fl price">
+            <ul>
+                <span>Chọn mức giá:</span>
+                <li><a href="#">Dưới 2 triệu</a></li>
+                <li><a href="#">Dưới 2-4 triệu</a></li>
+                <li><a href="#">Dưới 4-7 triệu</a></li>
+                <li><a href="#">Dưới 7-14 triệu</a></li>
+                <li><a href="#">Dưới 14-20 triệu</a></li>
+                <li><a href="#">Trên 20 triệu</a></li>
+            </ul>
+        </div>
+
     </div>
 </div>
 
@@ -159,7 +253,7 @@ URL: https://www.freshdesignweb.com/ustora/
 
                     <div class="product-option-shop">
                         <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70"
-                           rel="nofollow" href="/canvas/shop/?add-to-cart=70">Thêm giỏ hàng</a>
+                           rel="nofollow" href="/Index/cart/add?id=${p.id}">Thêm giỏ hàng</a>
                     </div>
                 </div>
             </c:forEach>
@@ -191,87 +285,38 @@ URL: https://www.freshdesignweb.com/ustora/
         </div>
     </div>
 </div>
-
-
-<div class="footer-top-area">
-    <div class="zigzag-bottom"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="footer-about-us">
-                    <h2>SM<span>Store</span></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sunt id doloribus vero quam
-                        laborum quas alias dolores blanditiis iusto consequatur, modi aliquid eveniet eligendi iure
-                        eaque ipsam iste, pariatur omnis sint! Suscipit, debitis, quisquam. Laborum commodi veritatis
-                        magni at?</p>
-                    <div class="footer-social">
-                        <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                        <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-                        <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+<div id="container-filter">
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="border">
+                <div class="container-filter">
+                    <p class="text border-bottom" style="text-align: center;margin-left: 42px;">DANH MỤC SẢN PHẨM </p>
+                    <div class="fl brand">
+                        <ul>
+                            <div class="sub-title"> <span>THƯƠNG HIỆU</span> </div>
+                            <li><a href="#">IPHONE</a></li>
+                            <li><a href="#">OPPO</a></li>
+                            <li><a href="#">SAMSUNG</a></li>
+                            <li><a href="#">REALME</a></li>
+                            <li><a href="#">REDME</a></li>
+                            <li><a href="#">XIAOMI</a></li>
+                        </ul>
                     </div>
+
                 </div>
-            </div>
+                <div class="border">
 
-            <div class="col-md-3 col-sm-6">
-                <div class="footer-menu">
-                    <h2 class="footer-wid-title">Điều hướng người dùng</h2>
-                    <ul>
-                        <li><a href="myaccount.html">Tài khoản</a></li>
-                        <li><a href="cart.html">Giỏ hàng</a></li>
-                        <li><a href="news.html">Tin tức</a></li>
-
-                    </ul>
                 </div>
-            </div>
 
-
-            <div class="col-md-3 col-sm-6">
-                <div class="footer-menu">
-                    <h2 class="footer-wid-title">Danh mục</h2>
-                    <ul>
-                        <li><a href="iphone.html">Iphone</a></li>
-                        <li><a href="samsung.html">Samsung</a></li>
-                        <li><a href="oppo.html">OPPO</a></li>
-                        <li><a href="realme.html">Realme</a></li>
-                        <li><a href="xiaomi.html">Xiaomi</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-                <div class="footer-newsletter">
-                    <h2 class="footer-wid-title">Nhận tin</h2>
-                    <p>Nhập địa chỉ email để có thể nhận thêm thông báo về chương trình khuyến mãi.</p>
-                    <div class="newsletter-form">
-                        <input type="email" placeholder="Nhập email">
-                        <input type="submit" value="Gửi">
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="footer-bottom-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="copyright">
-                    <p>Mọi thắc mắc xin liên hệ đường dây nóng: 19001188</p>
-                </div>
-            </div>
 
-            <div class="col-md-4">
-                <div class="footer-card-icon">
-                    <i class="fa fa-cc-discover"></i>
-                    <i class="fa fa-cc-mastercard"></i>
-                    <i class="fa fa-cc-paypal"></i>
-                    <i class="fa fa-cc-visa"></i>
-                </div>
-            </div>
-        </div>
+
+
     </div>
 </div>
+
+
 
 
 <!-- Latest jQuery form server -->

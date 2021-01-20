@@ -3,6 +3,8 @@ package demo.entity;
 import demo.beans.Product;
 import demo.db.ConnectionDB;
 
+
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -57,6 +59,37 @@ public class ProductEntity {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
             return 0;
+        }
+    }
+
+    public Product getByID(String id) {
+        PreparedStatement s = null;
+
+        try {
+            String sql = "select * from products where id=? ";
+            s = ConnectionDB.connect(sql);
+            s.setString(1, id);
+            ResultSet rs = s.executeQuery();
+            Product p;
+            if(rs.next()){
+                p = new Product(
+                        rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getLong(4),
+                        rs.getLong(5)
+                );
+                rs.close();
+                s.clearParameters();
+                return p;
+
+            }
+            return null;
+
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }
