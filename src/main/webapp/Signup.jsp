@@ -43,12 +43,12 @@
                 background-image: url("img/vendor/hinhnen_login.png");
                 background-size: cover;
             }
-            .container_form{
+            .container{
                 width: 1100px;
                 height: auto;
-                margin: auto;
-                padding: 10px;
-
+                margin:  auto;
+                padding-top: 10%;
+                background-size: contain;
             }
             .sign_in_form{
                 width: 70%;
@@ -106,12 +106,12 @@
 
     </head>
 <body>
-<div class="container_form">
+<div class="container">
     <div class="sign_in_form">
         <span class="text">ĐĂNG KÍ</span>
-        <form id="Sign_In" method="post" action="" onsubmit="getInfo();return false">
+        <form id="Sign_In" method="post" action="Signup" >
             <div class="input_box">
-                <input id="username" name="username" type="text" placeholder="Tên người dùng" value="">
+                <input id="user" name="user" type="text" placeholder="Tên người dùng" value="">
 
             </div>
             <div class="err">

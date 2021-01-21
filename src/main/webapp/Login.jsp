@@ -40,15 +40,14 @@
         body{
             background-image: url("img/vendor/hinhnen_login.png");
             background-size: cover;
+
         }
-        .container_form{
+        .container{
             width: 1100px;
             height: auto;
-            margin: auto;
-            padding: 80px;
-
-
-
+            margin:  auto;
+            padding-top: 10%;
+            background-size: contain;
         }
         .sign_in_form{
             width: 62%;
@@ -121,13 +120,13 @@
 
 <body>
 
-<div class="container_form">
+<div class="container">
     <div class="sign_in_form">
         <form id="Sign_In" method="get" action="Login">
             <span class="text">ĐĂNG NHẬP</span>
 
             <div class="input_box">
-                <input id="username" name="username" type="text" placeholder="Tên người dùng">
+                <input id="user" name="user" type="text" placeholder="Tên người dùng">
 
             </div>
             <div class="input_box">
@@ -145,7 +144,7 @@
         </form>
 
         <div class="sign_Up">
-            <span class="text">Bạn có tài khoản chưa? <a href="Signin.jsp">Đăng kí</a></span>
+            <span class="text">Bạn có tài khoản chưa? <a href="Signup.jsp">Đăng kí</a></span>
 
         </div>
     </div>

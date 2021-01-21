@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 <head>
 
@@ -17,7 +19,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="logo">
-                    <h1><a href="Index"><img src="img/vendor/your-logo.png"></a></h1>
+                    <h1><a href="home"><img src="img/vendor/your-logo.png"></a></h1>
                 </div>
                 <div class="search">
                     <input type="text" placeholder="Tìm kiếm">
@@ -29,9 +31,29 @@
                 <div class="col-md-8-menu">
                     <div class="user-menu">
                         <ul>
-                            <li><a href="UserAccount"><i class="fa fa-user"></i> Tài khoản</a></li>
-                            <li><a href="Cart"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
-                            <li><a href="Login"><i class="fa fa-user"></i> Đăng nhập</a></li>
+                            <c:if test="${ sessionScope.acc.isAdmin == 1}">
+                                <li><a href="#"><i class="fa fa-user-md"></i> Quản lí tài khoản </a></li>
+                            </c:if>
+
+                            <c:if test="${ sessionScope.acc.isSell == 1}">
+                                <li><a href="#"><i class="fa fa-bar-chart"></i>Quản lí sản phẩm</a></li>
+                            </c:if>
+
+                            <c:if test="${ sessionScope.acc != null}">
+
+                                <li><a href="UserAccount"><i class="fa fa-user"></i>${sessionScope.acc.username}</a>
+                                </li>
+                                <li><a href="Cart"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
+
+                                <li><a href="Logout"><i class="fa fa-sign-out"></i> Đăng xuất</a></li>
+                            </c:if>
+
+                            <c:if test="${ sessionScope.acc == null}">
+                                <li><a href="Cart"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
+
+                                <li><a href="Login.jsp"><i class="fa fa-user"></i> Đăng nhập</a></li>
+                            </c:if>
+
                         </ul>
                     </div>
                 </div>
@@ -54,34 +76,34 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class=""><a href="Index">Trang chủ</a></li>
-                    <li class="danh_muc"><a href="ListData">Danh mục sản phẩm</a>
+                    <li class=""><a href="home">Trang chủ</a></li>
+                    <li class="danh_muc"><a href="ProductList">Danh mục sản phẩm</a>
 
 
                         <ul class="sub-menu">
                             <li>Hãng sản xuất
                                 <ul class="h_sx">
-                                    <li class=""><a class="" href="Iphone">Iphone</a> </li>
+                                    <li class=""><a class="" href="Iphone">Iphone</a></li>
                                     <li class=""><a class="" href="Samsung">Samsung</a></li>
                                     <li class=""><a class="" href="OPPO">Oppo</a></li>
                                     <li class=""><a class="" href="Realme">Realme</a></li>
-                                    <li class=""><a class="" href="Xiaomi" > Xiaomi</a></li>
+                                    <li class=""><a class="" href="Xiaomi"> Xiaomi</a></li>
 
 
                                 </ul>
                             </li>
 
-<%--                            <li>Mức giá
+                            <%--                            <li>Mức giá
 
-                                <ul class="muc_gia">
-                                    <li>< 5 triệu</li>
-                                    <li>5-10 triệu</li>
-                                    <li>10-15 triệu</li>
-                                    <li>>15 triệu</li>
+                                                            <ul class="muc_gia">
+                                                                <li>< 5 triệu</li>
+                                                                <li>5-10 triệu</li>
+                                                                <li>10-15 triệu</li>
+                                                                <li>>15 triệu</li>
 
-                                </ul>
+                                                            </ul>
 
-                            </li>--%>
+                                                        </li>--%>
 
                         </ul>
 

@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+<footer style="clear: both">
 <div class="footer-top-area">
     <div class="zigzag-bottom"></div>
     <div class="container">
@@ -83,6 +84,6 @@
         </div>
     </div>
 </div>
-
+</footer>
 </body>
 </html>

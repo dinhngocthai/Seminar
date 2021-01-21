@@ -235,12 +235,12 @@ URL: https://www.freshdesignweb.com/ustora/
     <a href="ListProduct.jsp" id="grid" class="btn btn-default btn-sm">
         <span class="glyphicon glyphicon-th"></span>Dạng lưới</a>
 </div>
-
+<div>
 <div id="products" class="single-product-area">
     <div class="zigzag-bottom"></div>
     <div class="container">
         <div class="row">
-            <c:forEach items="${ListProduct}" var="p">
+            <c:forEach items="${ListP}" var="p">
                 <div class="col-md-3-3 col-sm-6">
                     <div class="product-upper">
                         <img src=${p.img} alt="">
@@ -257,31 +257,6 @@ URL: https://www.freshdesignweb.com/ustora/
                     </div>
                 </div>
             </c:forEach>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="product-pagination text-center">
-                    <nav>
-                        <ul class="pagination">
-                            <li>
-                                <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li><a href="list-item.html">1</a></li>
-                            <li><a href="list-item2.html">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li>
-                                <a href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -310,15 +285,11 @@ URL: https://www.freshdesignweb.com/ustora/
 
             </div>
         </div>
-
-
-
     </div>
+</div></div>
+<div style="clear: both">
+<jsp:include page="Footer.jsp"></jsp:include>
 </div>
-
-
-
-
 <!-- Latest jQuery form server -->
 <script src="https://code.jquery.com/jquery.min.js"></script>
 

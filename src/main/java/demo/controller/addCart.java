@@ -1,7 +1,6 @@
 package demo.controller;
 
 import demo.beans.Product;
-import demo.entity.ProductEntity;
 import demo.model.Cart;
 
 import javax.servlet.ServletException;
@@ -20,9 +19,9 @@ public class addCart extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
+/*        String id = request.getParameter("id");
         if(id==null) response.sendRedirect("/Index");
-        ProductEntity pe = new ProductEntity();
+        ProductControl pe = new ProductControl();
         Product p = pe.getByID(id);
         if(p==null){
             response.sendRedirect("/Index");
@@ -32,6 +31,6 @@ public class addCart extends HttpServlet {
 
         Cart c = Cart.getCart(session);
         c.put(p);
-        c.commit(session);
+        c.commit(session);*/
     }
 }
