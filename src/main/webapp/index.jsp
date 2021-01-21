@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
 <!DOCTYPE html>
 <!--
 ustora by freshdesignweb.com
@@ -137,107 +140,63 @@ URL: https://www.freshdesignweb.com/ustora/
         <div class="row">
             <div class="col-md-4">
                 <div class="single-product-widget">
-                    <h2 class="product-wid-title">Top Sellers</h2>
-                    <a href="" class="wid-view-more">View All</a>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="img/xiaomi/xiaomi-mi-10t-pro_2_.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Xiaomi Mi10T Pro</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
+                    <h2 class="product-wid-title">Top Sale</h2>
+                    <a href="#" class="wid-view-more">Xem tất cả</a>
+
+                    <c:forEach items="${ListS}" var="s">
+                        <div class="single-wid-product">
+                            <a href="single-product.html"><img src=${s.img} class="product-thumb"></a>
+                            <h2><a href="single-product.html">${s.name}</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product-carousel-price">
+                                <ins>${s.priceSale}đ</ins>
+                                <del>${s.price}đ</del>
+                            </div>
+
                         </div>
-                        <div class="product-wid-price">
-                            <ins>12.990.000₫</ins> <del>13.990.000₫</del>
-                        </div>
-                    </div>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="img/xiaomi/redmi_note_9_0002_layer_1_2_3.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Xiaomi Redmi Note 9</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product-wid-price">
-                            <ins>4.500.000₫</ins> <del>5.500.000₫</del>
-                        </div>
-                    </div>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="img/xiaomi/xiaomi-mi-note-10.png" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Xiaomi Mi Note 10</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product-wid-price">
-                            <ins>9.300.000₫</ins> <del>10.300.000₫</del>
-                        </div>
-                    </div>
+                    </c:forEach>
+
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="single-product-widget">
-                    <h2 class="product-wid-title">Recently Viewed</h2>
-                    <a href="#" class="wid-view-more">View All</a>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="img/iphone/iphone-11-pro-256gb-black-400x460.png" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Iphone 11</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
+                    <h2 class="product-wid-title">Giá rẻ</h2>
+                    <a href="#" class="wid-view-more">Xem tất cả</a>
+
+                    <c:forEach items="${ListLP}" var="lp">
+                        <div class="single-wid-product">
+                            <a href="single-product.html"><img src=${lp.img} class="product-thumb"></a>
+                            <h2><a href="single-product.html">${lp.name}</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product-carousel-price">
+                                <ins>${lp.priceSale}đ</ins>
+                                <del>${lp.price}đ</del>
+                            </div>
+
                         </div>
-                        <div class="product-wid-price">
-                            <ins>22.000.000₫</ins> <del>23.000.000₫</del>
-                        </div>
-                    </div>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="img/iphone/iphone-11-pro-vang-didongviet_1_2_1.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Iphone 11 Pro</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product-wid-price">
-                            <ins>25.000.000₫</ins> <del>26.000.000₫</del>
-                        </div>
-                    </div>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="img/vendor/product-thumb-1.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Iphone 11 Pro Max</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product-wid-price">
-                            <ins>29.000.000₫</ins> <del>30.000.000₫</del>
-                        </div>
-                    </div>
+                    </c:forEach>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="single-product-widget">
-                    <h2 class="product-wid-title">Top New</h2>
-                    <a href="#" class="wid-view-more">View All</a>
+                    <h2 class="product-wid-title">Mới nhất</h2>
+                    <a href="#" class="wid-view-more">Xem tất cả</a>
+                    <c:forEach items="${ListL}" var="l">
                     <div class="single-wid-product">
-                        <a href="single-product.html"><img src="img/samsung/samsung-a51.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Samsung Galaxy A51</a></h2>
+                        <a href="single-product.html"><img src=${l.img} class="product-thumb"></a>
+                        <h2><a href="single-product.html">${l.name}</a></h2>
                         <div class="product-wid-rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -245,38 +204,13 @@ URL: https://www.freshdesignweb.com/ustora/
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                         </div>
-                        <div class="product-wid-price">
-                            <ins>7.100.000₫</ins> <del>8.100.000₫</del>
+                        <div class="product-carousel-price">
+                            <ins>${l.priceSale}đ</ins>
+                            <del>${l.price}đ</del>
                         </div>
+
                     </div>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="img/samsung/samsung-a71.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Samsung Galaxy A71</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product-wid-price">
-                            <ins>9.000.000₫</ins> <del>10.000.000₫</del>
-                        </div>
-                    </div>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"> <img src="img/vendor/product-2.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Samsung Galaxy Note 10</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product-wid-price">
-                            <ins>16.490.000₫ </ins> <del> 17.490.000₫</del>
-                        </div>
-                    </div>
+                    </c:forEach>
                 </div>
             </div>
         </div>
