@@ -59,6 +59,7 @@ public class DAO {
         return list;
     }
 
+
     public List<Product> getLatest() {
         List<Product> list = new ArrayList<>();
         String query = " SELECT *FROM product\n" +
@@ -116,6 +117,30 @@ public class DAO {
 
             ps = new ConnectionDB().preparedStatementConnect(query);
             rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getDouble(5),
+                        rs.getString(6),
+                        rs.getString(7)));
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    public List<Product> getProductByCateID(String cid) {
+        List<Product> list = new ArrayList<>();
+        String query = " SELECT * FROM product WHERE cid = ?;";
+        try {
+
+            ps = new ConnectionDB().preparedStatementConnect(query);
+            ps.setString(1,cid);
+            rs = ps.executeQuery();
+
             while (rs.next()) {
                 list.add(new Product(rs.getInt(1),
                         rs.getString(2),
@@ -193,7 +218,7 @@ public class DAO {
         List<Product> list = dao.getAllProduct();
         List<Category> listC = dao.getAllCategory();
         List<Product> listL = dao.getLatest();
-        List<Product> listS = dao.getLowestPrice()  ;
+        List<Product> listS = dao.getProductByCateID("1")  ;
         for (Product p : listS) {
             System.out.println(p);
         }

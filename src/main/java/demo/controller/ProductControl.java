@@ -1,6 +1,7 @@
 package demo.controller;
 
 import demo.dao.DAO;
+import demo.entity.Category;
 import demo.entity.Product;
 
 import javax.servlet.ServletException;
@@ -22,7 +23,11 @@ public class ProductControl extends HttpServlet {
         //b1: get data form DAO
         DAO dao= new DAO();
         List<Product> list= dao.getAllProduct();
+        List<Category> listC= dao.getAllCategory();
+
         request.setAttribute("ListP", list);
+        request.setAttribute("ListC", listC);
+
         request.getRequestDispatcher("ListProduct.jsp").forward(request, response);
     }
 }

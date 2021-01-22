@@ -80,6 +80,7 @@
                     <li class="danh_muc"><a href="ProductList">Danh mục sản phẩm</a>
 
 
+<%--
                         <ul class="sub-menu">
                             <li>Hãng sản xuất
                                 <ul class="h_sx">
@@ -93,7 +94,7 @@
                                 </ul>
                             </li>
 
-                            <%--                            <li>Mức giá
+                            &lt;%&ndash;                            <li>Mức giá
 
                                                             <ul class="muc_gia">
                                                                 <li>< 5 triệu</li>
@@ -103,9 +104,10 @@
 
                                                             </ul>
 
-                                                        </li>--%>
+                                                        </li>&ndash;%&gt;
 
                         </ul>
+--%>
 
 
                     </li>
