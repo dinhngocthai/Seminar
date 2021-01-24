@@ -307,12 +307,12 @@ public class DAO {
 
 
         dao.getProductByID("2");
-/*        List<Product> list = dao.getAllProduct();
+        List<Product> list = dao.getAllProduct();
         for (Product p : list) {
             System.out.println(p);
-        }*/
-/*        for (Category c : listC) {
+        }
+        for (Category c : listC) {
             System.out.println(c);
-        }*/
+        }
     }
 }
