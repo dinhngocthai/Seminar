@@ -10,7 +10,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 <head>
-
+<style>
+    .user-menu li a {
+        display: block;
+        font-size: 13px;
+        margin-right: 5px;
+        padding: 5px;
+    }
+</style>
 </head>
 <body>
 
@@ -32,11 +39,11 @@
                     <div class="user-menu">
                         <ul>
                             <c:if test="${ sessionScope.acc.isAdmin == 1}">
-                                <li><a href="#"><i class="fa fa-user-md"></i> Quản lí tài khoản </a></li>
+                                <li ><a href="#"><i class="fa fa-user-md"></i> Quản lí tài khoản </a></li>
                             </c:if>
 
                             <c:if test="${ sessionScope.acc.isSell == 1}">
-                                <li><a href="#"><i class="fa fa-bar-chart"></i>Quản lí sản phẩm</a></li>
+                                <li><a href="manager"><i class="fa fa-bar-chart"></i>Quản lí sản phẩm</a></li>
                             </c:if>
 
                             <c:if test="${ sessionScope.acc != null}">

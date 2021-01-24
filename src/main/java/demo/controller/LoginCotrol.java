@@ -30,6 +30,7 @@ public class LoginCotrol extends HttpServlet {
         } else {
             HttpSession session=request.getSession();
             session.setAttribute("acc", a);
+            session.setMaxInactiveInterval(600);
 
 
            // request.getRequestDispatcher("home");

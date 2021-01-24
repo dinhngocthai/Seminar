@@ -132,6 +132,30 @@ public class DAO {
         }
         return list;
     }
+    public Product getProductByID(String id) {
+        String query = " SELECT * FROM product WHERE id =?;";
+        try {
+
+            ps = new ConnectionDB().preparedStatementConnect(query);
+            ps.setString(1,id);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                return new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getDouble(5),
+                        rs.getString(6),
+                        rs.getString(7));
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public List<Product> getProductByCateID(String cid) {
         List<Product> list = new ArrayList<>();
         String query = " SELECT * FROM product WHERE cid = ?;";
@@ -139,6 +163,30 @@ public class DAO {
 
             ps = new ConnectionDB().preparedStatementConnect(query);
             ps.setString(1,cid);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getDouble(5),
+                        rs.getString(6),
+                        rs.getString(7)));
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    public List<Product> getProductBySellID(int id) {
+        List<Product> list = new ArrayList<>();
+        String query = " SELECT * FROM product WHERE sell_ID = ?";
+        try {
+
+            ps = new ConnectionDB().preparedStatementConnect(query);
+            ps.setInt(1,id);
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -213,15 +261,56 @@ public class DAO {
 
     }
 
+    public void insertProduct(String name,String image, String price,String priceSale,String title,String description,String cID, int sellID){
+        String query = " INSERT into product(`name`,image,price,priceSale,tittle,description,cID,sell_ID) VALUES (?,?,?,?,?,?,?,?); ";
+        try {
+            ps = new ConnectionDB().preparedStatementConnect(query);
+            ps.setString(1, name);
+            ps.setString(2, image);
+            ps.setString(3, price);
+            ps.setString(4, priceSale);
+            ps.setString(5, title);
+            ps.setString(6, description);
+            ps.setString(7, cID);
+            ps.setInt(8, sellID);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteProduct(String pid){
+        String query = " DELETE FROM product WHERE id = ?";
+        try {
+            ps = new ConnectionDB().preparedStatementConnect(query);
+            ps.setString(1, pid);
+
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         DAO dao = new DAO();
-        List<Product> list = dao.getAllProduct();
+
         List<Category> listC = dao.getAllCategory();
         List<Product> listL = dao.getLatest();
-        List<Product> listS = dao.getProductByCateID("1")  ;
-        for (Product p : listS) {
+
+/*
+        dao.insertProduct("Samsung Galaxy A11",
+                "http://localhost:8080/ServletSerminaDemo/img/samsung/samsung-galaxy-z-fold-2.png",
+                "7100000",
+                "5500000","a", "a","1",1);
+*/
+
+
+        dao.getProductByID("2");
+/*        List<Product> list = dao.getAllProduct();
+        for (Product p : list) {
             System.out.println(p);
-        }
+        }*/
 /*        for (Category c : listC) {
             System.out.println(c);
         }*/
