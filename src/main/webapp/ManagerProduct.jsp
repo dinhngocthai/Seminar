@@ -239,6 +239,9 @@
         </div>
     </div>
 </div>
+<div class="button-radius">
+    <a href="home">Về trang chủ</a>
+</div>
 <script src="js/manager.js" type="text/javascript"></script>
 <script>
 
