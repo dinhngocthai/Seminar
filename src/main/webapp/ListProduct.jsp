@@ -324,17 +324,17 @@ URL: https://www.freshdesignweb.com/ustora/
                                 <div class="product-upper">
                                     <img src=${p.img} alt="">
                                 </div>
-                                <h2><a href="img/iphone/Iphon8.png">${p.name}</a></h2>
+                                <h2><a href="detail?pid=${p.id}">${p.name}</a></h2>
                                 <div class="product-carousel-price">
                                     <ins>${p.priceSale}đ</ins>
                                     <del>${p.price}đ</del>
                                 </div>
 
-                                <div class="product-option-shop">
+<%--                                <div class="product-option-shop">
                                     <a class="add_to_cart_button" data-quantity="1" data-product_sku=""
                                        data-product_id="70"
-                                       rel="nofollow" href="/Index/cart/add?id=${p.id}">Thêm giỏ hàng</a>
-                                </div>
+                                       rel="nofollow" href="add?id=${p.id}">Thêm giỏ hàng</a>
+                                </div>--%>
                             </div>
 
                         </c:forEach>
@@ -402,9 +402,7 @@ URL: https://www.freshdesignweb.com/ustora/
 --%>
 
 
-<div style="clear: both">
     <jsp:include page="Footer.jsp"></jsp:include>
-</div>
 <!-- Latest jQuery form server -->
 <script src="https://code.jquery.com/jquery.min.js"></script>
 

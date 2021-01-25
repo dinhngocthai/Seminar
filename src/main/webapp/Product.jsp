@@ -74,23 +74,23 @@
                     <div class="col-sm-6">
                         <div class="product-images">
                             <div class="product-main-img">
-                                <img src="img/vendor/product-2.jpg" alt="">
+                                <img src="${detail.img}" alt="">
                             </div>
 
-                            <div class="product-gallery">
+<%--                            <div class="product-gallery">
                                 <a href="#"> <img src="img/samsung/SSG-Back.jpg" alt=" "></a>
                                 <a href="#"><img src="img/samsung/SSG-Side.jpg" alt=""></a>
                                 <a href="#"><img src="img/samsung/SSG-Pen.jpg" alt=""></a>
-                            </div>
+                            </div>--%>
                         </div>
                     </div>
 
                     <div class="col-sm-6">
                         <div class="product-inner">
-                            <h2 class="product-name">Samsung Galaxy Note 10</h2>
+                            <h2 class="product-name">${detail.name}</h2>
                             <div class="product-inner-price">
-                                <ins>16.490.000₫</ins>
-                                <del>17.490.000₫</del>
+                                <ins>${detail.priceSale}</ins>
+                                <del>${detail.price}</del>
                             </div>
 
                             <form action="" class="cart">
@@ -100,11 +100,13 @@
                                 </div>
                                 <button class="add_to_cart_button" type="submit">Thêm vào giỏ hàng</button>
                             </form>
+<%--
 
                             <div class="product-inner-category">
                                 <p>Category: <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a
                                         href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
                             </div>
+--%>
 
                             <div role="tabpanel">
                                 <ul class="product-tab" role="tablist">
@@ -117,6 +119,10 @@
                                 </ul>
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                        <p>
+                                            ${detail.title}
+                                        </p>
+<%--
                                         <h2>Thông số kỹ thuật</h2>
                                         <p>Màn hình: 6.3", FHD+, Dynamic AMOLED, 1080 x 2280 Pixel</p>
                                         <p>Camera sau: 12.0 MP + 16.0 MP + 12.0 MP</p>
@@ -128,6 +134,7 @@
                                         <p>Thẻ sim: 2, Nano SIM</p>
                                         <p>Hệ điều hành: Android 9.0</p>
                                         <p>Tên hãng: SamSung</p>
+--%>
 
                                     </div>
 
@@ -162,8 +169,11 @@
                 <div class="related-products-wrapper">
                     <h2 class="related-products-title"> Mô tả sản phẩm</h2>
                     <div class="boxArticle">
+                        <p>
+                            ${detail.description}
+                        </p>
 
-
+<%--
                         <article class="area_article  area_articleFull" style="">
                             <h3>Nhà sản xuất&nbsp;<a href="https://www.thegioididong.com/dtdd-realme" target="_blank"
                                                      title="Tham khảo thêm điện thoại Realme kinh doanh tại Thế Giới Di Động">Realme</a>&nbsp;vừa
@@ -309,7 +319,7 @@
 
 
                                     <div class="clr"></div>
-<%--
+&lt;%&ndash;
                                     <script>
                                         //#region Đánh giá trang search
 
@@ -493,7 +503,7 @@
 
                                         //#endregion
                                     </script>
---%>
+&ndash;%&gt;
                                 </div>
 
 
@@ -520,6 +530,7 @@
 
                             </div>
                         </article>
+--%>
 
 
                     </div>

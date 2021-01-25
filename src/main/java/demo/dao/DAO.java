@@ -133,7 +133,10 @@ public class DAO {
         return list;
     }
     public Product getProductByID(String id) {
-        String query = " SELECT * FROM product WHERE id =?;";
+        String query = " SELECT * FROM product WHERE id =?";
+/*
+        Product p = new  Product();
+*/
         try {
 
             ps = new ConnectionDB().preparedStatementConnect(query);
@@ -279,6 +282,35 @@ public class DAO {
         }
     }
 
+    public void editProduct(String name,String image, String price,String priceSale,String title,String description,String cID, String pid){
+/*
+        String query = " INSERT into product(`name`,image,price,priceSale,tittle,description,cID,sell_ID) VALUES (?,?,?,?,?,?,?,?); ";
+*/
+        String query = "  UPDATE product set name = ?, \n" +
+                        "image = ? ,\n" +
+                        "price = ?,\n" +
+                        "priceSale = ?,\n" +
+                        "tittle =  ?,\n" +
+                        "description = ?,\n" +
+                        "cID = ?\n" +
+                        "WHERE id = ?;";
+
+
+        try {
+            ps = new ConnectionDB().preparedStatementConnect(query);
+            ps.setString(1, name);
+            ps.setString(2, image);
+            ps.setString(3, price);
+            ps.setString(4, priceSale);
+            ps.setString(5, title);
+            ps.setString(6, description);
+            ps.setString(7, cID);
+            ps.setString(8, pid);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     public void deleteProduct(String pid){
         String query = " DELETE FROM product WHERE id = ?";
         try {
@@ -306,13 +338,13 @@ public class DAO {
 */
 
 
-        dao.getProductByID("2");
-        List<Product> list = dao.getAllProduct();
+        System.out.println(dao.getProductBySellID(4));
+/*        List<Product> list = dao.getProductByCateID("4");
         for (Product p : list) {
             System.out.println(p);
-        }
+        }*//*
         for (Category c : listC) {
             System.out.println(c);
-        }
+        }*/
     }
 }
