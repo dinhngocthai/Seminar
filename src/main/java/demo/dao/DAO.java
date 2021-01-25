@@ -17,6 +17,9 @@ public class DAO {
     PreparedStatement ps = null;
     ResultSet rs = null;
 
+/*
+===============================Get ALL===============================
+*/
     public List<Product> getAllProduct() {
         List<Product> list = new ArrayList<>();
         String query = " SELECT * FROM PRODUCT";
@@ -32,6 +35,29 @@ public class DAO {
                             rs.getDouble(5),
                             rs.getString(6),
                             rs.getString(7)));
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    public List<Account> getAllAccount() {
+        List<Account> list = new ArrayList<>();
+        String query = " SELECT * FROM Account";
+        try {
+
+            ps = new ConnectionDB().preparedStatementConnect(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Account(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getInt(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8)));
 
             }
         } catch (Exception e) {
@@ -58,8 +84,9 @@ public class DAO {
         }
         return list;
     }
-
-
+/*
+    ===============================Get Specific===============================
+*/
     public List<Product> getLatest() {
         List<Product> list = new ArrayList<>();
         String query = " SELECT *FROM product\n" +
@@ -158,6 +185,33 @@ public class DAO {
         }
         return null;
     }
+    public Account getAccountByID(String uid) {
+        String query = " SELECT * FROM account WHERE uid =?";
+/*
+        Product p = new  Product();
+*/
+        try {
+
+            ps = new ConnectionDB().preparedStatementConnect(query);
+            ps.setString(1,uid);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                return  new Account(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getInt(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8));
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     public List<Product> getProductByCateID(String cid) {
         List<Product> list = new ArrayList<>();
@@ -183,7 +237,7 @@ public class DAO {
         }
         return list;
     }
-    public List<Product> getProductBySellID(int id) {
+/*    public List<Product> getProductBySellID(int id) {
         List<Product> list = new ArrayList<>();
         String query = " SELECT * FROM product WHERE sell_ID = ?";
         try {
@@ -206,7 +260,11 @@ public class DAO {
             e.printStackTrace();
         }
         return list;
-    }
+    }*/
+
+/*
+===============================Login Signup===============================
+*/
     public Account login(String username, String password) {
         String query = " SELECT * FROM account \n" +
                 "WHERE user = ?\n" +
@@ -217,11 +275,14 @@ public class DAO {
             ps.setString(2, password);
             rs = ps.executeQuery();
             while (rs.next()) {
-                return new Account(rs.getInt(1),
+                return  new Account(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getInt(4),
-                        rs.getInt(5));
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -238,11 +299,14 @@ public class DAO {
             ps.setString(1, username);
             rs = ps.executeQuery();
             while (rs.next()) {
-                return new Account(rs.getInt(1),
+                return  new Account(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getInt(4),
-                        rs.getInt(5));
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8));
             }
         } catch (Exception e) {
         }
@@ -250,18 +314,72 @@ public class DAO {
     }
 
     public void signup(String username, String password) {
-        String query = " INSERT INTO account(`user`, `password`, isSell,isAdmin) VALUES (?,?,0,0);\n";
+        String query = " INSERT INTO account(`user`, `password`,isAdmin,fullname,address,phone) VALUES (?,?,0, NULL,NULL,NULL);";
         try {
             ps = new ConnectionDB().preparedStatementConnect(query);
-            ps.setString(1,username);
-            ps.setString(2,password);
+            ps.setString(1, username);
+            ps.setString(2, password);
             ps.executeUpdate();
 
         } catch (Exception e) {
             e.printStackTrace();
 
         }
+    }
+/*
+    ========================================Insert, Delete, Edit========================================
+*/
+    public void insertAccount(String username, String password){
+        String query = " INSERT into Account(user,password,isAdmin,fullname,address,email,phone) VALUES (?,?,0,NULL,NULL,NULL,NULL); ";
+        try {
+            ps = new ConnectionDB().preparedStatementConnect(query);
+            ps.setString(1, username);
+            ps.setString(2, password);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
+    public void deleteAccount(String uid){
+        String query = " DELETE FROM account WHERE uid = ?";
+        try {
+            ps = new ConnectionDB().preparedStatementConnect(query);
+            ps.setString(1, uid);
+
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void editAccount(String username, String password, String fullname, String address, String email, String phone, String uid){
+/*
+        String query = " INSERT into product(`name`,image,price,priceSale,tittle,description,cID,sell_ID) VALUES (?,?,?,?,?,?,?,?); ";
+*/
+        String query = "UPDATE account set user =?, \n" +
+                "password= ?, \n" +
+                "fullname=?, \n" +
+                "email=?, \n" +
+                "address=?,\n" +
+                "phone=?WHERE uid = ?;";
+
+
+        try {
+            ps = new ConnectionDB().preparedStatementConnect(query);
+            ps.setString(1, username);
+            ps.setString(2, password);
+            ps.setString(3, fullname);
+            ps.setString(4, address);
+            ps.setString(5, email);
+            ps.setString(6, phone);
+            ps.setString(7, uid);
+
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void insertProduct(String name,String image, String price,String priceSale,String title,String description,String cID, int sellID){
@@ -281,7 +399,6 @@ public class DAO {
             e.printStackTrace();
         }
     }
-
     public void editProduct(String name,String image, String price,String priceSale,String title,String description,String cID, String pid){
 /*
         String query = " INSERT into product(`name`,image,price,priceSale,tittle,description,cID,sell_ID) VALUES (?,?,?,?,?,?,?,?); ";
@@ -324,12 +441,20 @@ public class DAO {
         }
     }
 
+
     public static void main(String[] args) {
         DAO dao = new DAO();
 
         List<Category> listC = dao.getAllCategory();
         List<Product> listL = dao.getLatest();
-
+        List<Account> listA = dao.getAllAccount();
+        System.out.println(dao.getAccountByID("111"));
+/*
+        dao.editAccount("tranvu","123456789","vu ngoc bao tran", "phan van thuan","baotran@gmail.com","0941848715",111);
+*/
+/*        for (Account a : listA) {
+            System.out.println(a);}
+        */
 /*
         dao.insertProduct("Samsung Galaxy A11",
                 "http://localhost:8080/ServletSerminaDemo/img/samsung/samsung-galaxy-z-fold-2.png",
@@ -338,7 +463,6 @@ public class DAO {
 */
 
 
-        System.out.println(dao.getProductBySellID(4));
 /*        List<Product> list = dao.getProductByCateID("4");
         for (Product p : list) {
             System.out.println(p);

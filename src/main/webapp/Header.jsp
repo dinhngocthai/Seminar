@@ -39,14 +39,13 @@
                     <div class="user-menu">
                         <ul>
                             <c:if test="${ sessionScope.acc.isAdmin == 1}">
-                                <li ><a href="#"><i class="fa fa-user-md"></i> Quản lí tài khoản </a></li>
-                            </c:if>
-
-                            <c:if test="${ sessionScope.acc.isSell == 1}">
+                                <li ><a href="managerAccount"><i class="fa fa-user-md"></i> Quản lí tài khoản </a></li>
                                 <li><a href="manager"><i class="fa fa-bar-chart"></i>Quản lí sản phẩm</a></li>
+                                <li><a href="Logout"><i class="fa fa-sign-out"></i> Đăng xuất</a></li>
                             </c:if>
 
-                            <c:if test="${ sessionScope.acc != null}">
+
+                            <c:if test="${  sessionScope.acc.isAdmin ==0}">
 
                                 <li><a href="UserAccount"><i class="fa fa-user"></i>${sessionScope.acc.username}</a>
                                 </li>

@@ -120,15 +120,7 @@
             </div>
             <-------------------------------------------------------->
 
-            <div class="input_box">
-                <input id="email"  name="email" type="text" placeholder="Email" value="">
-                <!-- <span id="erroremail" class="err"></span> -->
 
-            </div>
-            <div class="err">
-                <span id="erroremail"></span>
-
-            </div>
             <-------------------------------------------------------->
             <div class="input_box">
                 <input id="password" name="password" type="password" placeholder="Mật khẩu" value="">

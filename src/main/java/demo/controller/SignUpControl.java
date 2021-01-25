@@ -28,7 +28,7 @@ public class SignUpControl extends HttpServlet {
         } else {
             DAO dao = new DAO();
             Account a = dao.checkAccountExist(user);
-            if (a == null) {
+            if (a == null ) {
                 dao.signup(user, password);
                 response.sendRedirect("home");
             } else {
