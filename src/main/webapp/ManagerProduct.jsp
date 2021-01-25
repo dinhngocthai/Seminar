@@ -36,13 +36,13 @@
         <div class="table-title">
             <div class="row">
                 <div class="col-sm-6">
-                    <h2>Quản lý sản phẩm</h2>
+                    <h2>Manage <b>Product</b></h2>
                 </div>
                 <div class="col-sm-6">
                     <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i>
-                        <span>Thêm sản phẩm</span></a>
+                        <span>Add New Product</span></a>
                     <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i>
-                        <span>Xóa</span></a>
+                        <span>Delete</span></a>
                 </div>
             </div>
         </div>
@@ -56,15 +56,38 @@
                                 </span>
                 </th>
                 <th>ID</th>
-                <th>Tên</th>
-                <th>Hình ảnh</th>
-                <th>Giá</th>
-                <th>Giá giảm</th>
-                <th>Hành động</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>PriceSale</th>
+                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
+<%--                            <tr>
+                                <td>
+                                                <span class="custom-checkbox">
+                                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                                    <label for="checkbox1"></label>
+                                                </span>
+                                </td>
+                                <td>1</td>
+                                <td>Iphone 7</td>
+                                <td>
+                                    <img src="img/iphone/iphone-7-gold-600x600.jpg">
+                                </td>
+                                <td>2 $</td>
+                                <td>1 $</td>
 
+                                <td>
+                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons"
+                                                                                                     data-toggle="tooltip"
+                                                                                                     title="Edit">&#xE254;</i></a>
+                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons"
+                                                                                                         data-toggle="tooltip"
+                                                                                                         title="Delete">&#xE872;</i></a>
+                                </td>
+                            </tr>--%>
             <c:forEach items="${ListP}" var="p">
                 <tr>
                     <td>
@@ -113,36 +136,36 @@
         <div class="modal-content">
             <form action="add" method="post">
                 <div class="modal-header">
-                    <h4 class="modal-title">Thêm sản phẩm</h4>
+                    <h4 class="modal-title">Add Product</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Tên</label>
+                        <label>Name</label>
                         <input name="name" type="text" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label>Hình ảnh</label>
+                        <label>Image</label>
                         <input name="image" type="text" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label>Giá</label>
+                        <label>Price</label>
                         <input name="price" type="text" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label>Giá giảm</label>
+                        <label>PriceSale</label>
                         <input name="priceSale" type="text" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label>Thông số</label>
+                        <label>Title</label>
                         <textarea name="title" class="form-control" required></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Mô tả</label>
+                        <label>Description</label>
                         <textarea name="description" class="form-control" required></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Danh sách</label>
+                        <label>Category</label>
                         <select name="category" class="form-select" aria-label="Default select example">
 
                             <c:forEach items="${ListC}" var="c">
@@ -153,8 +176,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Hủy">
-                    <input type="button submit" class="btn btn-default" value="Thêm">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-success" value="Add">
                 </div>
             </form>
         </div>
@@ -216,10 +239,6 @@
         </div>
     </div>
 </div>
-<div class="button-radius">
-    <a href="home">Về trang chủ</a>
-</div>
-
 <script src="js/manager.js" type="text/javascript"></script>
 <script>
 
