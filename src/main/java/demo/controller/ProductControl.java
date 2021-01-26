@@ -24,10 +24,8 @@ public class ProductControl extends HttpServlet {
         DAO dao= new DAO();
         List<Product> list= dao.getAllProduct();
         List<Category> listC= dao.getAllCategory();
-
         request.setAttribute("ListP", list);
         request.setAttribute("ListC", listC);
-
         request.getRequestDispatcher("ListProduct.jsp").forward(request, response);
     }
 }

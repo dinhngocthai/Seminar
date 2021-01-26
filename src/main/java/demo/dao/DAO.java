@@ -439,8 +439,52 @@ public class DAO {
             e.printStackTrace();
         }
     }
+/*======================================Pagination======================================*/
 
+    public int getnumberpage(){
+        String query = " SELECT COUNT(*)\n" +
+                "FROM product";
+        try {
+            ps = new ConnectionDB().preparedStatementConnect(query);
+            rs=ps.executeQuery();
+            while (rs.next()){
+                int total= rs.getInt(1);
+                int countPage=0;
+                countPage= total/20;
+                if(total % 20 != 0){
+                    countPage++;
+                }
+                return countPage;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return  0;
+    }
 
+    public List<Product> getPaging(int index){
+        String query= "SELECT * FROM PRODUCT LIMIT 10 offset ?";
+        List<Product> list= new ArrayList<>();
+        try {
+            ps = new ConnectionDB().preparedStatementConnect(query);
+            ps.setInt(1,(index-1)*20);
+            rs=ps.executeQuery();
+
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getDouble(5),
+                        rs.getString(6),
+                        rs.getString(7)));
+            return list;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
     public static void main(String[] args) {
         DAO dao = new DAO();
 
@@ -449,7 +493,8 @@ public class DAO {
 
         List<Product> listL = dao.getLatest();
         List<Account> listA = dao.getAllAccount();
-        System.out.println(dao.getAccountByID("111"));
+        System.out.println(dao.getnumberpage());
+
 /*
         dao.editAccount("tranvu","123456789","vu ngoc bao tran", "phan van thuan","baotran@gmail.com","0941848715",111);
 */
@@ -462,9 +507,11 @@ public class DAO {
                 "7100000",
                 "5500000","a", "a","1");
 */
+/*
         dao.editProduct("Samsung Galaxy A11", "http://localhost:8080/ServletSerminaDemo/img/samsung/samsung-galaxy-z-fold-2.png",
                 "8100000",
                 "5500000","a", "a","1","72");
+*/
 
         /*List<Product> list = dao.getProductByCateID("4");*/
 /*        for (Product p : listP) {

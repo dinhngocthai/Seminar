@@ -22,11 +22,11 @@ public class DetailControl extends HttpServlet {
         String id = request.getParameter("pid");
         DAO dao= new DAO();
         Product p = dao.getProductByID(id);
-        List<Category> listC = dao.getAllCategory();
-        Product last = (Product) dao.getLatest();
+/*        List<Category> listC = dao.getAllCategory();
+        Product last = (Product) dao.getLatest();*/
         request.setAttribute("detail",p);
-        request.setAttribute("ListC",listC);
-        request.setAttribute("p",last);
+/*        request.setAttribute("ListC",listC);
+        request.setAttribute("p",last);*/
         request.getRequestDispatcher("Product.jsp").forward(request,response);
     }
 }

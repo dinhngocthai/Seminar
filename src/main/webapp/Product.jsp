@@ -64,11 +64,11 @@
                         <div class="col-md-8">
             --%>
             <div class="product-content-right">
-                <div class="product-breadcroumb">
+<%--                <div class="product-breadcroumb">
                     <a href="Index">Trang chủ</a>
                     <a href="Product">Danh mục sản phẩm</a>
                     <a href="Product">Samsung Galaxy Note 10</a>
-                </div>
+                </div>--%>
 
                 <div class="row">
                     <div class="col-sm-6">
@@ -531,11 +531,10 @@
                             </div>
                         </article>
 --%>
-
-
                     </div>
                 </div>
 
+<%--
                 <div class="related-products-wrapper">
                     <h2 class="related-products-title"> Sản phẩm liên quan</h2>
                     <div class="related-products-carousel">
@@ -560,6 +559,7 @@
                         </c:forEach>
                     </div>
                 </div>
+--%>
             </div>
             <%--
                         </div>

@@ -203,6 +203,8 @@ URL: https://www.freshdesignweb.com/ustora/
 
 
     </style>
+    <jsp:useBean id="a" class="demo.dao.DAO" scope="request"></jsp:useBean>
+
 </head>
 <body>
 <jsp:include page="Header.jsp"/>
@@ -220,6 +222,7 @@ URL: https://www.freshdesignweb.com/ustora/
     </div>
 </div>
 
+<%--
 <div class="menu-price">
     <div class="navbar-menu">
         <div class="fl price">
@@ -236,6 +239,7 @@ URL: https://www.freshdesignweb.com/ustora/
 
     </div>
 </div>
+--%>
 
 <div class="btn-group-choice">
     <span>Chọn kiểu hiển thị</span>
@@ -336,10 +340,24 @@ URL: https://www.freshdesignweb.com/ustora/
                                        rel="nofollow" href="add?id=${p.id}">Thêm giỏ hàng</a>
                                 </div>--%>
                             </div>
-
                         </c:forEach>
                     </div>
                 </div>
+                <div class="clearfix"  style="float: right">
+
+                    <%--      <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>--%>
+                    <ul class="pagination">
+
+                        <%-- <li class="page-item disabled"><a href="#">Previous</a></li>--%>
+                        <c:forEach begin ="1" end="${a.getnumberpage()}" var="i">
+                        <li class="page-item active"><a href="#" class="page-link ">${i}</a></li>
+                          </c:forEach>
+
+    <%--                <li class="page-item"><a href="#" class="page-link">Next</a></li>--%>
+
+                    </ul>
+                </div>
+
             </div>
         </div>
     </div>

@@ -117,7 +117,6 @@
 
 
                     </li>
-                    <li><a href="Product">Chi tiết sản phẩm</a></li>
                     <li><a href="Checkout">Thanh toán</a></li>
                     <li><a href="News">Tin tức</a></li>
                     <li><a href="Hotline">Liên hệ</a></li>
