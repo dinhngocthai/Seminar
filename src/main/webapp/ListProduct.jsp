@@ -350,7 +350,7 @@ URL: https://www.freshdesignweb.com/ustora/
 
                         <%-- <li class="page-item disabled"><a href="#">Previous</a></li>--%>
                         <c:forEach begin ="1" end="${a.getnumberpage()}" var="i">
-                        <li class="page-item active"><a href="#" class="page-link ">${i}</a></li>
+                        <li class="page-item "><a href="paging?index=${i}" class="page-link ">${i}</a></li>
                           </c:forEach>
 
     <%--                <li class="page-item"><a href="#" class="page-link">Next</a></li>--%>

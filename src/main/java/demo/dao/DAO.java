@@ -237,6 +237,30 @@ public class DAO {
         }
         return list;
     }
+    public List<Product> getPaging(int index){
+        List<Product> list= new ArrayList<>();
+
+        String query= "SELECT * FROM PRODUCT LIMIT 20 offset ?";
+        try {
+            ps = new ConnectionDB().preparedStatementConnect(query);
+            ps.setInt(1,(index-1)*5);
+            rs=ps.executeQuery();
+
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getDouble(5),
+                        rs.getString(6),
+                        rs.getString(7)));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return list;
+    }
+
 /*    public List<Product> getProductBySellID(int id) {
         List<Product> list = new ArrayList<>();
         String query = " SELECT * FROM product WHERE sell_ID = ?";
@@ -462,29 +486,6 @@ public class DAO {
         return  0;
     }
 
-    public List<Product> getPaging(int index){
-        String query= "SELECT * FROM PRODUCT LIMIT 10 offset ?";
-        List<Product> list= new ArrayList<>();
-        try {
-            ps = new ConnectionDB().preparedStatementConnect(query);
-            ps.setInt(1,(index-1)*20);
-            rs=ps.executeQuery();
-
-            while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getDouble(4),
-                        rs.getDouble(5),
-                        rs.getString(6),
-                        rs.getString(7)));
-            return list;
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return null;
-    }
     public static void main(String[] args) {
         DAO dao = new DAO();
 
@@ -493,8 +494,9 @@ public class DAO {
 
         List<Product> listL = dao.getLatest();
         List<Account> listA = dao.getAllAccount();
+        System.out.println(dao.getPaging(4));
         System.out.println(dao.getnumberpage());
-
+        System.out.println(listA);
 /*
         dao.editAccount("tranvu","123456789","vu ngoc bao tran", "phan van thuan","baotran@gmail.com","0941848715",111);
 */
