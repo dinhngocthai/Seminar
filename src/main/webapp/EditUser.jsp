@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <input type="submit" class="btn btn-info" value="Edit">
+                    <input type="submit" class="btn btn-info active" value="Edit">
                 </div>
             </form>
         </div>

@@ -128,7 +128,7 @@
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Hủy">
-                    <input type="button submit" class="btn btn-default " value="Thêm">
+                    <input type="submit" class="btn btn-default " value="Thêm">
                 </div>
             </form>
         </div>

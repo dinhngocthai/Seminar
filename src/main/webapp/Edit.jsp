@@ -48,7 +48,6 @@
             <form action="edit" method="post">
                 <div class="modal-header">
                     <h4 class="modal-title">Sửa thông tin sản phẩm</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
@@ -94,7 +93,7 @@
 <%--
                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
 --%>
-                    <input type="submit" class="btn btn-success" value="Edit">
+                    <input type="submit" class="btn btn-success " value="Edit">
                 </div>
             </form>
         </div>

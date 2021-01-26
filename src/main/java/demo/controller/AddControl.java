@@ -30,9 +30,8 @@ public class AddControl extends HttpServlet {
         String category= request.getParameter("category");
         HttpSession session= request.getSession();
         Account a= (Account) session.getAttribute("acc");
-        int sid =  a.getId();
         DAO dao = new DAO();
-        dao.insertProduct(name, img, price,priceSale,title,description,category, sid);
+        dao.insertProduct(name, img, price,priceSale,title,description,category );
         response.sendRedirect("manager");
     }
 }

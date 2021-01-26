@@ -382,8 +382,8 @@ public class DAO {
         }
     }
 
-    public void insertProduct(String name,String image, String price,String priceSale,String title,String description,String cID, int sellID){
-        String query = " INSERT into product(`name`,image,price,priceSale,tittle,description,cID,sell_ID) VALUES (?,?,?,?,?,?,?,?); ";
+    public void insertProduct(String name,String image, String price,String priceSale,String title,String description,String cID){
+        String query = " INSERT into product(`name`,image,price,priceSale,tittle,description,cID) VALUES (?,?,?,?,?,?,?); ";
         try {
             ps = new ConnectionDB().preparedStatementConnect(query);
             ps.setString(1, name);
@@ -393,7 +393,6 @@ public class DAO {
             ps.setString(5, title);
             ps.setString(6, description);
             ps.setString(7, cID);
-            ps.setInt(8, sellID);
             ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -401,7 +400,7 @@ public class DAO {
     }
     public void editProduct(String name,String image, String price,String priceSale,String title,String description,String cID, String pid){
 /*
-        String query = " INSERT into product(`name`,image,price,priceSale,tittle,description,cID,sell_ID) VALUES (?,?,?,?,?,?,?,?); ";
+        String query = " INSERT into product(`name`,image,price,priceSale,tittle,description,cID) VALUES (?,?,?,?,?,?,?,?); ";
 */
         String query = "  UPDATE product set name = ?, \n" +
                         "image = ? ,\n" +
@@ -446,6 +445,8 @@ public class DAO {
         DAO dao = new DAO();
 
         List<Category> listC = dao.getAllCategory();
+        List<Product> listP = dao.getAllProduct();
+
         List<Product> listL = dao.getLatest();
         List<Account> listA = dao.getAllAccount();
         System.out.println(dao.getAccountByID("111"));
@@ -459,12 +460,14 @@ public class DAO {
         dao.insertProduct("Samsung Galaxy A11",
                 "http://localhost:8080/ServletSerminaDemo/img/samsung/samsung-galaxy-z-fold-2.png",
                 "7100000",
-                "5500000","a", "a","1",1);
+                "5500000","a", "a","1");
 */
+        dao.editProduct("Samsung Galaxy A11", "http://localhost:8080/ServletSerminaDemo/img/samsung/samsung-galaxy-z-fold-2.png",
+                "8100000",
+                "5500000","a", "a","1","72");
 
-
-/*        List<Product> list = dao.getProductByCateID("4");
-        for (Product p : list) {
+        /*List<Product> list = dao.getProductByCateID("4");*/
+/*        for (Product p : listP) {
             System.out.println(p);
         }*//*
         for (Category c : listC) {
