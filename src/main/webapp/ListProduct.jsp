@@ -327,18 +327,23 @@ URL: https://www.freshdesignweb.com/ustora/
 
                                 <div class="product-upper">
                                     <img src=${p.img} alt="">
+
                                 </div>
-                                <h2><a href="detail?pid=${p.id}">${p.name}</a></h2>
                                 <div class="product-carousel-price">
+                                <h2><a href="detail?pid=${p.id}">${p.name}</a></h2>
+                                </div>
+                                <div class="product-carousel-price">
+<%--                                    <ins>${p.price}đ</ins>
+                                    <del>${p.priceSale}đ</del>--%>
                                     <ins>${p.priceSale}đ</ins>
                                     <del>${p.price}đ</del>
                                 </div>
 
-<%--                                <div class="product-option-shop">
+                                <div class="product-option-shop">
                                     <a class="add_to_cart_button" data-quantity="1" data-product_sku=""
                                        data-product_id="70"
                                        rel="nofollow" href="add?id=${p.id}">Thêm giỏ hàng</a>
-                                </div>--%>
+                                </div>
                             </div>
                         </c:forEach>
                     </div>
@@ -350,7 +355,7 @@ URL: https://www.freshdesignweb.com/ustora/
 
                         <%-- <li class="page-item disabled"><a href="#">Previous</a></li>--%>
                         <c:forEach begin ="1" end="${a.getnumberpage()}" var="i">
-                        <li class="page-item "><a href="paging?index=${i}" class="page-link ">${i}</a></li>
+                        <li class="page-item ${indexPage==i ? "active": ""} "><a href="paging?index=${i}" class="page-link ">${i}</a></li>
                           </c:forEach>
 
     <%--                <li class="page-item"><a href="#" class="page-link">Next</a></li>--%>

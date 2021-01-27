@@ -1,7 +1,6 @@
 package demo.page;
 
-import demo.beans.Product;
-import demo.filter.Data;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,9 +17,9 @@ public class Cart extends HttpServlet {
 
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {/*
         Collection<Product> values = Data.dataOPPO.values();
-        request.setAttribute("ListOPPO",values);
+        request.setAttribute("ListOPPO",values);*/
         request.getRequestDispatcher("Cart.jsp").forward(request,response);
     }
 }

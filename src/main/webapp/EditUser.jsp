@@ -61,6 +61,10 @@
                         <input  value="${detailAccount.username}" name="username" type="text" class="form-control" required>
                     </div>
                     <div class="form-group">
+                        <label>Mật khẩu</label>
+                        <input  value="${detailAccount.password}" name="password" type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
                         <label>Họ Tên</label>
                         <input  value="${detailAccount.fullname}" name="fullname" type="text" class="form-control" required>
                     </div>

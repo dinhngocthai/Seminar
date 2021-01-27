@@ -28,11 +28,14 @@
                 <div class="logo">
                     <h1><a href="home"><img src="img/vendor/your-logo.png"></a></h1>
                 </div>
+                <form action="search" method="post">
                 <div class="search">
-                    <input type="text" placeholder="Tìm kiếm">
+                    <input value="${txtS}"  name="txt" type="text" placeholder="Tìm kiếm">
+                    <button type="submit" >
                     <i class="fa fa-search"></i>
-
+                    </button>
                 </div>
+                </form>
             </div>
             <div class="row">
                 <div class="col-md-8-menu">

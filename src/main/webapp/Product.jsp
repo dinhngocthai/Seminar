@@ -1,3 +1,6 @@
+<%@ page import="demo.dao.DAO" %>
+<%@ page import="java.text.NumberFormat" %>
+<%@ page import="demo.entity.Cart" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -35,7 +38,17 @@
     <![endif]-->
 </head>
 <body>
+<%
+    DAO dao =   new DAO();
+    NumberFormat nf= NumberFormat.getInstance();
+    nf.setMaximumIntegerDigits(0);
+    Cart cart= (Cart) session.getAttribute("cart");
+    if(cart == null){
+        new Cart();
+        session.setAttribute("cart",cart);
 
+    }
+%>
 
 <jsp:include page="Header.jsp"></jsp:include>
 
@@ -89,8 +102,13 @@
                         <div class="product-inner">
                             <h2 class="product-name">${detail.name}</h2>
                             <div class="product-inner-price">
-                                <ins>${detail.priceSale}</ins>
-                                <del>${detail.price}</del>
+
+                                <ins>${detail.price}đ</ins>
+
+                                <del>${detail.priceSale}đ</del>
+                             <%--   <ins>${detail.price}đ</ins>
+
+                                <del>${detail.priceSale}đ</del>--%>
                             </div>
 
                             <form action="" class="cart">

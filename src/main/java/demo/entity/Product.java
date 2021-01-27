@@ -1,6 +1,6 @@
     package demo.entity;
 
-    public class Product {
+    public class Product implements  Comparable <Product>{
         private int id;
         private String name;
         private String img;
@@ -90,4 +90,12 @@
         public void setDescription(String description) {
             this.description = description;
         }
+
+
+
+        @Override
+        public int compareTo(Product o) {
+            return this.id - o.id;
+        }
+
     }

@@ -1,6 +1,5 @@
 package demo.model;
 
-import demo.beans.Product;
 
 import javax.servlet.http.HttpSession;
 import java.io.Serializable;
@@ -9,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Cart implements Serializable {
-    Map<String, Product> data = new HashMap<>();
+/*    Map<String, Product> data = new HashMap<>();
 
     public Cart(){
 
@@ -47,5 +46,5 @@ public class Cart implements Serializable {
 
     public Collection<Product> getData() {
         return data.values();
-    }
+    }*/
 }
